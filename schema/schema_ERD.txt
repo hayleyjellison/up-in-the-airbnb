@@ -1,0 +1,156 @@
+calendar
+---------
+listing_id INTEGER PK
+date DATE PK
+available BOOLEAN NULLABLE
+price NUMERIC NULLABLE
+adjusted_price NUMERIC NULLABLE
+minimum_nights INTEGER NULLABLE
+maximum_nights INTEGER NULLABLE
+
+neighbourhoods
+--------------
+neighbourhood_group VARCHAR NULLABLE
+neighbourhood VARCHAR(255) PK
+
+reviews
+-------
+listing_id INTEGER PK
+date DATE NULLABLE
+
+listings
+--------
+id INTEGER PK
+name VARCHAR NULLABLE
+host_id INTEGER NULLABLE
+host_name VARCHAR NULLABLE
+neighbourhood_group VARCHAR NULLABLE
+neighbourhood VARCHAR NULLABLE
+latitude DECIMAL NULLABLE
+longitude DECIMAL NULLABLE
+room_type VARCHAR NULLABLE
+price NUMERIC NULLABLE
+minimum_nights INTEGER NULLABLE
+number_of_reviews INTEGER NULLABLE
+last_review DATE NULLABLE
+reviews_per_month DOUBLE NULLABLE
+calculated_host_listings_count DOUBLE NULLABLE
+availability_365 INTEGER NULLABLE
+
+reviews_full
+-------------
+listing_id INTEGER NULLABLE
+id INTEGER PK 
+date DATE NULLABLE
+reviewer_id INTEGER NULLABLE
+reviewer_name VARCHAR NULLABLE
+comments TEXT NULLABLE
+
+listings_full
+-------------
+id INTEGER PK 
+listing_url TEXT NULLABLE
+scrape_id BIGINT NULLABLE
+last_scraped DATE NULLABLE
+name VARCHAR NULLABLE
+summary TEXT NULLABLE
+space TEXT NULLABLE
+description TEXT NULLABLE
+experiences_offered BOOLEAN NULLABLE
+neighborhood_overview TEXT NULLABLE
+notes TEXT NULLABLE
+transit TEXT NULLABLE
+access TEXT NULLABLE
+interaction TEXT NULLABLE
+house_rules TEXT NULLABLE
+thumbnail_url TEXT NULLABLE
+medium_url TEXT NULLABLE
+picture_url TEXT NULLABLE
+xl_picture_url TEXT NULLABLE
+host_id INTEGER NULLABLE
+host_url TEXT NULLABLE
+host_name VARCHAR NULLABLE
+host_since DATE NULLABLE
+host_location VARCHAR NULLABLE
+host_about TEXT NULLABLE
+host_response_time VARCHAR NULLABLE
+host_response_rate DOUBLE NULLABLE
+host_acceptance_rate DOUBLE NULLABLE
+host_is_superhost BOOLEAN NULLABLE
+host_thumbnail_url TEXT NULLABLE
+host_picture_url TEXT NULLABLE
+host_neighbourhood VARCHAR NULLABLE
+host_listings_count INTEGER NULLABLE
+host_total_listings_count INTEGER NULLABLE
+host_verifications TEXT[] NULLABLE
+host_has_profile_pic BOOLEAN NULLABLE
+host_identity_verified BOOLEAN NULLABLE
+street VARCHAR NULLABLE
+neighbourhood VARCHAR NULLABLE
+neighbourhood_cleansed VARCHAR NULLABLE
+neighbourhood_group_cleansed VARCHAR NULLABLE
+city VARCHAR NULLABLE
+state VARCHAR NULLABLE
+zipcode VARCHAR NULLABLE
+market VARCHAR NULLABLE
+smart_location VARCHAR NULLABLE
+country_code VARCHAR NULLABLE
+country VARCHAR NULLABLE
+latitude DECIMAL NULLABLE
+longitude DECIMAL NULLABLE
+is_location_exact BOOLEAN NULLABLE
+property_type VARCHAR NULLABLE
+room_type VARCHAR NULLABLE
+accommodates INTEGER NULLABLE
+bathrooms DOUBLE NULLABLE
+bedrooms INTEGER NULLABLE
+beds INTEGER NULLABLE
+bed_type VARCHAR NULLABLE
+amenities TEXT[] NULLABLE
+square_feet INTEGER NULLABLE
+price NUMERIC NULLABLE
+weekly_price NUMERIC NULLABLE
+monthly_price NUMERIC NULLABLE
+security_deposit NUMERIC NULLABLE
+cleaning_fee NUMERIC NULLABLE
+guests_included INTEGER NULLABLE
+extra_people NUMERIC NULLABLE
+minimum_nights INTEGER NULLABLE
+maximum_nights INTEGER NULLABLE
+minimum_minimum_nights INTEGER NULLABLE
+maximum_minimum_nights INTEGER NULLABLE
+minimum_maximum_nights INTEGER NULLABLE
+maximum_maximum_nights INTEGER NULLABLE
+minimum_nights_avg_ntm DOUBLE NULLABLE
+maximum_nights_avg_ntm DOUBLE NULLABLE
+calendar_updated VARCHAR NULLABLE
+has_availability BOOLEAN NULLABLE
+availability_30 INTEGER NULLABLE
+availability_60 INTEGER NULLABLE
+availability_90 INTEGER NULLABLE
+availability_365 INTEGER NULLABLE
+calendar_last_scraped DATE NULLABLE
+number_of_reviews INTEGER NULLABLE
+number_of_reviews_ltm INTEGER NULLABLE
+first_review DATE NULLABLE
+last_review DATE NULLABLE
+review_scores_rating INTEGER NULLABLE
+review_scores_accuracy INTEGER NULLABLE
+review_scores_cleanliness INTEGER NULLABLE
+review_scores_checkin INTEGER NULLABLE
+review_scores_communication INTEGER NULLABLE
+review_scores_location INTEGER NULLABLE
+review_scores_value INTEGER NULLABLE
+requires_license BOOLEAN NULLABLE
+license VARCHAR NULLABLE
+jurisdiction_names TEXT[] NULLABLE
+instant_bookable BOOLEAN NULLABLE
+is_business_travel_ready BOOLEAN NULLABLE
+cancellation_policy VARCHAR NULLABLE
+require_guest_profile_picture BOOLEAN NULLABLE
+require_guest_phone_verification BOOLEAN NULLABLE
+calculated_host_listings_count INTEGER NULLABLE
+calculated_host_listings_count_entire_homes INTEGER NULLABLE
+calculated_host_listings_count_private_rooms INTEGER NULLABLE
+calculated_host_listings_count_shared_rooms INTEGER NULLABLE
+reviews_per_month DOUBLE NULLABLE
