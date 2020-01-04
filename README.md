@@ -22,6 +22,13 @@ NEEDED:
 
 We are taking data from AirBnB properties around Austin, Texas
 
-WHAT? 1) Machine Learning property value evaluator??
-2) Word association analysis (word cloud?)
-3) Chloropeth map (by value)
+WHAT? 
+1. Machine Learning property value evaluator??
+2. Word association analysis (word cloud?)
+3. Chloropeth map (by value)
+4. Superhost classification
+5. Tag analysis
+
+WHY? 
+1. AirBnB is a new industry - affecting housing market and hotel business 
+2. Room rental is very popular right now- what unique qualities do airbnb's in Austin have -> what can you do to make your listing more successful here??
