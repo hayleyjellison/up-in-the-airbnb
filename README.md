@@ -1,3 +1,5 @@
+![house](houseimg.jpeg)
+
 # airbnb-project
 
 ## Group Members
