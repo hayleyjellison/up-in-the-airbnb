@@ -20,7 +20,7 @@ NEEDED:
 * How you plan on demonstrating your model (web app, jupyter notebook)
 * How you plan on training the model (colab, personal computer, aws, Databricks)
 
-We are taking data from AirBnB properties around Austin, Texas
+We are taking data from AirBnB properties around Austin, Texas to analyze the new market of room/house rental and how it affects the existing housing and hotel industries. This data includes the listings's cost per night, zip code, rating, availability, and more. We will use machine learning to create a value guesser when given certain parameters about the AirBnB property, as well as go through rental reviews to find word association trends based on what area of the city the property is located in.
 
 WHAT? 
 1. Machine Learning property value evaluator??
@@ -28,6 +28,7 @@ WHAT?
 3. Chloropeth map (by value)
 4. Superhost classification
 5. Tag analysis
+6. Review score analysis
 
 WHY? 
 1. AirBnB is a new industry - affecting housing market and hotel business 
