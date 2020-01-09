@@ -1,0 +1,132 @@
+calendar
+---------
+listing_id INTEGER FK >- listings_full.id
+date DATE
+available BOOLEAN NULLABLE
+price NUMERIC NULLABLE
+adjusted_price NUMERIC NULLABLE
+minimum_nights INTEGER NULLABLE
+maximum_nights INTEGER NULLABLE
+
+neighbourhoods
+--------------
+neighbourhood_group VARCHAR(255) NULLABLE
+neighbourhood VARCHAR(255) PK
+
+reviews_full
+-------------
+listing_id INTEGER NULLABLE FK >- listings_full.id
+id INTEGER PK 
+date DATE NULLABLE
+reviewer_id INTEGER NULLABLE
+reviewer_name VARCHAR(255) NULLABLE
+comments TEXT NULLABLE
+
+listings_full
+-------------
+id INTEGER PK 
+listing_url TEXT NULLABLE
+scrape_id BIGINT NULLABLE
+last_scraped DATE NULLABLE
+name VARCHAR(255) NULLABLE
+summary TEXT NULLABLE
+space TEXT NULLABLE
+description TEXT NULLABLE
+experiences_offered TEXT NULLABLE
+neighborhood_overview TEXT NULLABLE
+notes TEXT NULLABLE
+transit TEXT NULLABLE
+access TEXT NULLABLE
+interaction TEXT NULLABLE
+house_rules TEXT NULLABLE
+thumbnail_url TEXT NULLABLE
+medium_url TEXT NULLABLE
+picture_url TEXT NULLABLE
+xl_picture_url TEXT NULLABLE
+host_id INTEGER NULLABLE
+host_url TEXT NULLABLE
+host_name VARCHAR(255) NULLABLE
+host_since DATE NULLABLE
+host_location VARCHAR(255) NULLABLE
+host_about TEXT NULLABLE
+host_response_time VARCHAR(255) NULLABLE
+host_response_rate FLOAT NULLABLE
+host_acceptance_rate FLOAT NULLABLE
+host_is_superhost BOOLEAN NULLABLE
+host_thumbnail_url TEXT NULLABLE
+host_picture_url TEXT NULLABLE
+host_neighbourhood VARCHAR(255) NULLABLE
+host_listings_count INTEGER NULLABLE
+host_total_listings_count INTEGER NULLABLE
+host_verifications TEXT NULLABLE
+host_has_profile_pic BOOLEAN NULLABLE
+host_identity_verified BOOLEAN NULLABLE
+street VARCHAR(255) NULLABLE
+neighbourhood VARCHAR(255) NULLABLE
+neighbourhood_cleansed VARCHAR(255) NULLABLE FK >- neighbourhoods.neighbourhood
+neighbourhood_group_cleansed VARCHAR(255) NULLABLE
+city VARCHAR(255) NULLABLE
+state VARCHAR(255) NULLABLE
+zipcode VARCHAR(255) NULLABLE
+market VARCHAR(255) NULLABLE
+smart_location VARCHAR(255) NULLABLE
+country_code VARCHAR(255) NULLABLE
+country VARCHAR(255) NULLABLE
+latitude NUMERIC NULLABLE
+longitude NUMERIC NULLABLE
+is_location_exact BOOLEAN NULLABLE
+property_type VARCHAR(255) NULLABLE
+room_type VARCHAR(255) NULLABLE
+accommodates INTEGER NULLABLE
+bathrooms FLOAT NULLABLE
+bedrooms INTEGER NULLABLE
+beds INTEGER NULLABLE
+bed_type VARCHAR(255) NULLABLE
+amenities TEXT NULLABLE
+square_feet INTEGER NULLABLE
+price NUMERIC NULLABLE
+weekly_price NUMERIC NULLABLE
+monthly_price NUMERIC NULLABLE
+security_deposit NUMERIC NULLABLE
+cleaning_fee NUMERIC NULLABLE
+guests_included INTEGER NULLABLE
+extra_people NUMERIC NULLABLE
+minimum_nights INTEGER NULLABLE
+maximum_nights INTEGER NULLABLE
+minimum_minimum_nights INTEGER NULLABLE
+maximum_minimum_nights INTEGER NULLABLE
+minimum_maximum_nights INTEGER NULLABLE
+maximum_maximum_nights INTEGER NULLABLE
+minimum_nights_avg_ntm FLOAT NULLABLE
+maximum_nights_avg_ntm FLOAT NULLABLE
+calendar_updated VARCHAR(255) NULLABLE
+has_availability BOOLEAN NULLABLE
+availability_30 INTEGER NULLABLE
+availability_60 INTEGER NULLABLE
+availability_90 INTEGER NULLABLE
+availability_365 INTEGER NULLABLE
+calendar_last_scraped DATE NULLABLE
+number_of_reviews INTEGER NULLABLE
+number_of_reviews_ltm INTEGER NULLABLE
+first_review DATE NULLABLE
+last_review DATE NULLABLE
+review_scores_rating INTEGER NULLABLE
+review_scores_accuracy INTEGER NULLABLE
+review_scores_cleanliness INTEGER NULLABLE
+review_scores_checkin INTEGER NULLABLE
+review_scores_communication INTEGER NULLABLE
+review_scores_location INTEGER NULLABLE
+review_scores_value INTEGER NULLABLE
+requires_license BOOLEAN NULLABLE
+license VARCHAR(255) NULLABLE
+jurisdiction_names TEXT NULLABLE
+instant_bookable BOOLEAN NULLABLE
+is_business_travel_ready BOOLEAN NULLABLE
+cancellation_policy VARCHAR(255) NULLABLE
+require_guest_profile_picture BOOLEAN NULLABLE
+require_guest_phone_verification BOOLEAN NULLABLE
+calculated_host_listings_count INTEGER NULLABLE
+calculated_host_listings_count_entire_homes INTEGER NULLABLE
+calculated_host_listings_count_private_rooms INTEGER NULLABLE
+calculated_host_listings_count_shared_rooms INTEGER NULLABLE
+reviews_per_month FLOAT NULLABLE
