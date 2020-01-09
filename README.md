@@ -1,6 +1,7 @@
 ![airbnb](newairbnb.jpeg)
 
-# airbnb-project
+# AirBnB-Project
+https://hayleyjellison.github.io/up-in-the-airbnb/
 
 ## Group Members
 
