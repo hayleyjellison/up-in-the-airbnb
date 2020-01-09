@@ -1,4 +1,4 @@
-![house](houseimg.jpeg)
+![airbnb](newairbnb.jpeg)
 
 # airbnb-project
 
