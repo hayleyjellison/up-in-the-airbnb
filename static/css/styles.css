@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico|Quicksand&display=swap');
 body {
-    /* background-color: #ffffff;  */
+    background-color: #ffffff; 
     font-family: 'Quicksand';
 }
 .navbar-custom { 
@@ -102,4 +102,11 @@ html {
 
 .spacer{
     height:250px;
+}
+
+#map,
+html,
+body {
+    height: 95%;
+    width: 95%;
 }
