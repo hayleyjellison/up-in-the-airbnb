@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico|Quicksand&display=swap');
 body {
-    background-color: #ffffff; 
+    /* background-color: #ffffff;  */
     font-family: 'Quicksand';
 }
 .navbar-custom { 
@@ -28,10 +28,10 @@ ul {
     list-style-type: none;
     margin: 0;
     margin-top: 10%;
+}
 
-    li {
-        display: inline-block;
-    }
+li {
+    display: inline-block;    
 }
 
 .contentlist {
