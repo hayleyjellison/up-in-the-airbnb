@@ -6,51 +6,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <title>Pirates Travel Index</title>
+  <title>Up in the Airbnb</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+  <!-- Leaflet CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+  integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+  integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+  crossorigin=""></script>
+
+  <!-- D3 JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.2/d3.js"></script>
 </head>
 
 <body>
-  
-  <!-- <nav class="navbar sticky-top navbar-expand-lg navbar-custom">
-    <a class="navbar-brand piratey" href="/">Pirates Travel Index</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/maps">Maps</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/patterns">Patterns</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/rankings">Rankings</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/density">Density</a>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav flex-row justify-content-md-center justify-content-start flex-nowrap">
-          <li class="nav-item">
-            <img src="../static/resources/images/coinicon.svg" alt="coin" height="50" width="50" onclick="document.getElementById('jingle').play()">
-          </li>
-      </ul>
-    </div>
-  </nav> -->
+
     <nav class="navbar sticky-top navbar-expand-lg navbar-custom">
-    <href class="navbar-brand airy" href="/">Up in the Air{bnb}</href>
+      <href class="navbar-brand airy" href="/">Up in the Air{bnb}</href>
     </nav>
-    <div class="divider"></div>
     <div class="contentlist">
         <ul>
             <li>
                 <a href="#section1">About</a>   
             </li>
             <li>
-                <a href="#section2">ChrisTitle</a> 
+                <a href="#section2">Sentiment Map</a> 
             </li>
             <li>
                 <a href="#section3">NathanTitle</a> 
@@ -66,9 +48,9 @@
             </li>
         </ul>
     </div>
-   
+  <br>
   <div class="divider spacer" id="section1"></div>
-
+  <br>
   <div class="main" id="about">
     <h1 class="page-title">Up in the Air{bnb}</h1>
     <p>
@@ -83,7 +65,10 @@
 
   <div class="main" id="person1">
     <!-- Chris write your stuff here -->
-    <h2>Title</h2>
+    <h2>Sentiment Map</h2>
+    <br><br>
+    <div id="map"></div>
+    <br><br>
     <p>
         Description of Chris's stuff
     </p>
@@ -147,6 +132,10 @@
   <!-- <audio id="jingle" src="../static/resources/audio/.mp3"></audio> -->
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script> -->
   <link rel="stylesheet" type="text/css" href="static/css/styles.css">
+  <!-- API key -->
+  <script type="text/javascript" src="static/js/config.js"></script>
+  <!-- JS -->
+  <script type="text/javascript" src="static/js/logic.js"></script>
   <!-- <script src="https://d3plus.org/js/d3plus-plot.v0.8.full.min.js"></script> -->
 
 </body>
