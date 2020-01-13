@@ -1,4 +1,4 @@
-![airbnb](newairbnb.jpeg)
+![airbnb](static/images/newairbnb.jpeg)
 
 # AirBnB-Project
 https://hayleyjellison.github.io/up-in-the-airbnb/
