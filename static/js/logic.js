@@ -27,23 +27,6 @@ function createMap(sentiment_data) {
         accessToken: API_KEY
     });
 
-    // Create our map, giving it the streetmap and earthquakes layers to display on load
-    // const myMap = L.map("map", {
-    //     center: [30.2672, -97.7431],
-    //     zoom: 13,
-    //     layers: streetmap
-    // });
-
-    // sentiment_data.forEach(d => {
-    //     L.circle([d.latitude, d.longitude], {
-    //         color: getColor(d.avg_sentiment_positivity),
-    //         fillColor: getColor(d.avg_sentiment_positivity),
-    //         radius: 100
-    //     })
-    //     .addTo(myMap)
-    //     .bindPopup("<h1>" + d.listing_id + "</h1> <hr> <h3>Review Scores Rating: " + d.review_scores_rating + "</h3>" + "<h3>Positivity Rating: " + positivityClass(d.avg_sentiment_positivity) + "</h3>")
-    // });
-
     const votePosMarkers = [];
     const highConfMarkers = [];
     const longConfMarkers = [];
@@ -89,11 +72,6 @@ function createMap(sentiment_data) {
     const longConf = L.layerGroup(longConfMarkers);
     const classifyConf = L.layerGroup(classifyMarkers);
 
-    // Create a baseMaps object
-    const baseMaps = {
-        "Street Map": streetmap
-    };
-
     // Create an overlay object
     const overlayMaps = {
         "Listings by Votes": votePos,
@@ -108,13 +86,8 @@ function createMap(sentiment_data) {
         zoom: 13,
         layers: [streetmap, votePos]
     });
-
-    // Pass our map layers into our layer control
-    // Add the layer control to the map
-    L.control.layers(baseMaps, overlayMaps, {
-        collapsed: false
-    }).addTo(myMap);
     
+    L.control.layers(overlayMaps).addTo(myMap);
 }
 
 // Load data from nlp_sentiment_results.csv
