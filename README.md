@@ -15,6 +15,9 @@ https://hayleyjellison.github.io/up-in-the-airbnb/
 * https://www.kaggle.com/dataset/fc7a2d436d47f21c86242da9adf324f18b36d12fefb8defd111fc53ecf8f9304
 * http://insideairbnb.com/index.html
 
+## Tutorials
+* https://www.datacamp.com/community/tutorials/wordcloud-python
+
 We are taking data from Airbnb properties around Austin, Texas to analyze the new market of room/house rental and how it affects the existing housing and hotel industries. This data includes the listings's cost per night, zip code, rating, availability, and more. We will use machine learning to create a value guesser when given certain parameters about the Airbnb property, as well as go through rental reviews to find word association trends based on what area of the city the property is located in. The metrics we will use to evaluate our ml model will include the r2 value and classification point. We will clean this data by getting rid of filler words in reviews such as "the", "of", & "and". We plan on training our model with AWS and Databricks and we will demonstrate our model using a web app.
 
 We will be using:
