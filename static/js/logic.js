@@ -90,10 +90,28 @@ function createMap(sentiment_data) {
     L.control.layers(overlayMaps).addTo(myMap);
 }
 
+function ngramPlotly(data) {
+    var data = [{
+        type: 'bar',
+        x: [20, 14, 23],
+        y: ['giraffes', 'orangutans', 'monkeys'],
+        orientation: 'h'
+      }];
+      
+      Plotly.newPlot('unigram', data);
+}
+
 // Load data from nlp_sentiment_results.csv
 (async function(){
     const sentimentData = await d3.csv("data/nlp_sentiment_results.csv").catch(error => console.warn(error));
+    createMap(sentimentData);
 
-    createMap(sentimentData)
+    const wordCloudData = await d3.csv("data/top_words_by_zipcode.csv").catch(error => console.warn(error));
+    ngramPlotly(wordCloudData)
+    console.log(wordCloudData)
 })()
 
+// // Load data from top_words_by_zipcode.csv
+// (async function(){
+    
+// })()
