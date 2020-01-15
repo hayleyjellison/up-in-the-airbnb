@@ -29,55 +29,59 @@
   <div id="map"></div>
 
   <div class="container">
-    <button class="btn btn-default dropdown-toggle pull-right" id="download-menu" type="button" data-toggle="dropdown">Zipcode
-      <span class="caret"></span>
-    </button>
-      <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-        <li role="presentation"><a id="zipcode-78701" role="menuitem" tabindex="-1">78701</a></li>
-        <li role="presentation"><a id="zipcode-78702" role="menuitem" tabindex="-1">78702</a></li>
-        <li role="presentation"><a id="zipcode-78703" role="menuitem" tabindex="-1">78703</a></li>
-        <li role="presentation"><a id="zipcode-78704" role="menuitem" tabindex="-1">78704</a></li>
-        <li role="presentation"><a id="zipcode-78705" role="menuitem" tabindex="-1">78705</a></li>
-        <li role="presentation"><a id="zipcode-78712" role="menuitem" tabindex="-1">78712</a></li>
-        <li role="presentation"><a id="zipcode-78717" role="menuitem" tabindex="-1">78717</a></li>
-        <li role="presentation"><a id="zipcode-78719" role="menuitem" tabindex="-1">78719</a></li>
-        <li role="presentation"><a id="zipcode-78721" role="menuitem" tabindex="-1">78721</a></li>
-        <li role="presentation"><a id="zipcode-78722" role="menuitem" tabindex="-1">78722</a></li>
-        <li role="presentation"><a id="zipcode-78723" role="menuitem" tabindex="-1">78723</a></li>
-        <li role="presentation"><a id="zipcode-78724" role="menuitem" tabindex="-1">78724</a></li>
-        <li role="presentation"><a id="zipcode-78725" role="menuitem" tabindex="-1">78725</a></li>
-        <li role="presentation"><a id="zipcode-78726" role="menuitem" tabindex="-1">78726</a></li>
-        <li role="presentation"><a id="zipcode-78727" role="menuitem" tabindex="-1">78727</a></li>
-        <li role="presentation"><a id="zipcode-78728" role="menuitem" tabindex="-1">78728</a></li>
-        <li role="presentation"><a id="zipcode-78729" role="menuitem" tabindex="-1">78729</a></li>
-        <li role="presentation"><a id="zipcode-78730" role="menuitem" tabindex="-1">78730</a></li>
-        <li role="presentation"><a id="zipcode-78731" role="menuitem" tabindex="-1">78731</a></li>
-        <li role="presentation"><a id="zipcode-78732" role="menuitem" tabindex="-1">78732</a></li>
-        <li role="presentation"><a id="zipcode-78733" role="menuitem" tabindex="-1">78733</a></li>
-        <li role="presentation"><a id="zipcode-78734" role="menuitem" tabindex="-1">78734</a></li>
-        <li role="presentation"><a id="zipcode-78735" role="menuitem" tabindex="-1">78735</a></li>
-        <li role="presentation"><a id="zipcode-78736" role="menuitem" tabindex="-1">78736</a></li>
-        <li role="presentation"><a id="zipcode-78737" role="menuitem" tabindex="-1">78737</a></li>
-        <li role="presentation"><a id="zipcode-78738" role="menuitem" tabindex="-1">78738</a></li>
-        <li role="presentation"><a id="zipcode-78739" role="menuitem" tabindex="-1">78739</a></li>
-        <li role="presentation"><a id="zipcode-78741" role="menuitem" tabindex="-1">78741</a></li>
-        <li role="presentation"><a id="zipcode-78742" role="menuitem" tabindex="-1">78742</a></li>
-        <li role="presentation"><a id="zipcode-78744" role="menuitem" tabindex="-1">78744</a></li>
-        <li role="presentation"><a id="zipcode-78745" role="menuitem" tabindex="-1">78745</a></li>
-        <li role="presentation"><a id="zipcode-78746" role="menuitem" tabindex="-1">78746</a></li>
-        <li role="presentation"><a id="zipcode-78747" role="menuitem" tabindex="-1">78747</a></li>
-        <li role="presentation"><a id="zipcode-78748" role="menuitem" tabindex="-1">78748</a></li>
-        <li role="presentation"><a id="zipcode-78749" role="menuitem" tabindex="-1">78749</a></li>
-        <li role="presentation"><a id="zipcode-78750" role="menuitem" tabindex="-1">78750</a></li>
-        <li role="presentation"><a id="zipcode-78751" role="menuitem" tabindex="-1">78751</a></li>
-        <li role="presentation"><a id="zipcode-78752" role="menuitem" tabindex="-1">78752</a></li>
-        <li role="presentation"><a id="zipcode-78753" role="menuitem" tabindex="-1">78753</a></li>
-        <li role="presentation"><a id="zipcode-78754" role="menuitem" tabindex="-1">78754</a></li>
-        <li role="presentation"><a id="zipcode-78756" role="menuitem" tabindex="-1">78756</a></li>
-        <li role="presentation"><a id="zipcode-78757" role="menuitem" tabindex="-1">78757</a></li>
-        <li role="presentation"><a id="zipcode-78758" role="menuitem" tabindex="-1">78758</a></li>
-        <li role="presentation"><a id="zipcode-78759" role="menuitem" tabindex="-1">78759</a></li> 
+  
+    <div class="btn-group">
+      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" id="dropdownMenuButton">
+        Zipcode <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu scrollable-menu" role="menu">
+          <li><button class="dropdown-item" type="button" id="zipcode-78701">78701</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78702">78702</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78703">78703</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78704">78704</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78705">78705</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78712">78712</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78717">78717</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78719">78719</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78721">78721</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78722">78722</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78723">78723</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78724">78724</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78725">78725</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78726">78726</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78727">78727</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78728">78728</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78729">78729</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78730">78730</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78731">78731</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78732">78732</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78733">78733</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78734">78734</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78735">78735</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78736">78736</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78737">78737</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78738">78738</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78739">78739</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78741">78741</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78742">78742</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78744">78744</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78745">78745</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78746">78746</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78747">78747</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78748">78748</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78749">78749</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78750">78750</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78751">78751</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78752">78752</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78753">78753</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78754">78754</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78756">78756</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78757">78757</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78758">78758</button></li>
+          <li><button class="dropdown-item" type="button" id="zipcode-78759">78759</button></li>
       </ul>
+    </div>
+
     <div class="row">
       
       <div class="col-sm">
