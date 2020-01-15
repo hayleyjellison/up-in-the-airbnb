@@ -27,7 +27,7 @@ function createMap(sentiment_data) {
         accessToken: API_KEY
     });
 
-    const votePosMarkers = [];
+    const votePosMarkers  = [];
     const highConfMarkers = [];
     const longConfMarkers = [];
     const classifyMarkers = [];
@@ -67,9 +67,9 @@ function createMap(sentiment_data) {
         );
     })
 
-    const votePos = L.layerGroup(votePosMarkers);
-    const highConf = L.layerGroup(highConfMarkers);
-    const longConf = L.layerGroup(longConfMarkers);
+    const votePos      = L.layerGroup(votePosMarkers);
+    const highConf     = L.layerGroup(highConfMarkers);
+    const longConf     = L.layerGroup(longConfMarkers);
     const classifyConf = L.layerGroup(classifyMarkers);
 
     // Create an overlay object
@@ -90,15 +90,32 @@ function createMap(sentiment_data) {
     L.control.layers(overlayMaps).addTo(myMap);
 }
 
-function ngramPlotly(data) {
-    var data = [{
+function ngramPlotly(ngram_data, id) {
+    let prefix = ""
+    if (id == "unigram_plotly"){
+        prefix = "uni"
+    } else {
+        prefix = "bi"
+    }
+
+    let data = [{
         type: 'bar',
-        x: [20, 14, 23],
-        y: ['giraffes', 'orangutans', 'monkeys'],
-        orientation: 'h'
+        x: ngram_data["78736"][prefix + "gram_count"],
+        y: ngram_data["78736"][prefix + "gram_words"],
+        orientation: 'h',
+        
       }];
+
+    let layout = {
+        autosize: false,
+        width: 300,
+        height: 300,
+        yaxis:{
+            autorange:'reversed'
+        }
+      }
       
-      Plotly.newPlot('unigram', data);
+    Plotly.newPlot(id, data, layout);
 }
 
 // Load data from nlp_sentiment_results.csv
@@ -106,12 +123,9 @@ function ngramPlotly(data) {
     const sentimentData = await d3.csv("data/nlp_sentiment_results.csv").catch(error => console.warn(error));
     createMap(sentimentData);
 
-    const wordCloudData = await d3.csv("data/top_words_by_zipcode.csv").catch(error => console.warn(error));
-    ngramPlotly(wordCloudData)
-    console.log(wordCloudData)
-})()
-
-// // Load data from top_words_by_zipcode.csv
-// (async function(){
+    const wordCloudDataUnigram = await d3.json("data/unigram.json").catch(error => console.warn(error));
+    ngramPlotly(wordCloudDataUnigram, 'unigram_plotly')
     
-// })()
+    const wordCloudDataBigram = await d3.json("data/bigram.json").catch(error => console.warn(error));
+    ngramPlotly(wordCloudDataBigram, 'bigram_plotly')
+})()
