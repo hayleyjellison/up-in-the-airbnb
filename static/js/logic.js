@@ -100,10 +100,9 @@ function ngramPlotly(ngram_data, id) {
 
     let data = [{
         type: 'bar',
-        x: ngram_data["78736"][prefix + "gram_count"],
-        y: ngram_data["78736"][prefix + "gram_words"],
-        orientation: 'h',
-        
+        x: ngram_data["78701"][prefix + "gram_count"],
+        y: ngram_data["78701"][prefix + "gram_words"],
+        orientation: 'h'
       }];
 
     let layout = {
@@ -125,7 +124,7 @@ function ngramPlotly(ngram_data, id) {
 
     const wordCloudDataUnigram = await d3.json("data/unigram.json").catch(error => console.warn(error));
     ngramPlotly(wordCloudDataUnigram, 'unigram_plotly')
-    
+
     const wordCloudDataBigram = await d3.json("data/bigram.json").catch(error => console.warn(error));
     ngramPlotly(wordCloudDataBigram, 'bigram_plotly')
 })()
