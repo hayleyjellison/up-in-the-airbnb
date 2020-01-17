@@ -7,8 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <title>Up in the Airbnb</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
   <!-- Leaflet CSS & JS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
   integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
@@ -17,8 +19,8 @@
   integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
   crossorigin=""></script>
 
-  <!-- D3 JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.2/d3.js"></script>
+  <!-- Nathan CSS -->
+  <link rel="stylesheet" type="text/css" href="static/css/styles.css">
 </head>
 
 <body>
@@ -35,16 +37,16 @@
                 <a href="#section2">Sentiment Map</a> 
             </li>
             <li>
-                <a href="#section3">NathanTitle</a> 
+                <a href="#section3">Word Clouds</a> 
             </li>
             <li>
-                <a href="#section4">HazelTitle</a> 
+                <a href="#section4">Booking Map</a> 
             </li>
             <li>
-                <a href="#section5">HayleyTitle</a>
+                <a href="#section5">Superhost IDer</a>
             </li>   
             <li>
-                <a href="#section6">PaulTitle</a>
+                <a href="#section6">Data Insights</a>
             </li>
         </ul>
     </div>
@@ -52,6 +54,7 @@
   <div class="divider spacer" id="section1"></div>
   <br>
   <div class="main" id="about">
+    <!-- About Section -->
     <h1 class="page-title">Up in the Air{bnb}</h1>
     <p>
         Talking about this project.
@@ -64,7 +67,7 @@
   <div class="divider" id="section2"></div>
 
   <div class="main" id="person1">
-    <!-- Chris write your stuff here -->
+    <!-- First Section -->
     <h2>Sentiment Map</h2>
     <br><br>
     <div id="map"></div>
@@ -72,36 +75,160 @@
     <p>
         Description of Chris's stuff
     </p>
+
+  <div class="container">
+  
     <div class="spacer"></div>
+  </div>
   </div>
 
   <div class="divider" id="section3"></div>
 
   <div class="main" id="person2">
-    <!-- Nathan write your stuff here -->
-    <h2>Title</h2>
+    <!-- Second Section -->
+    <h2>Word Clouds</h2>
     <p>
         Description of Nathan's stuff
     </p>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" id="dropdownMenuButton">
+        Zipcode <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu scrollable-menu" role="menu">
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78701">78701</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78702">78702</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78703">78703</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78704">78704</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78705">78705</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78712">78712</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78717">78717</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78719">78719</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78721">78721</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78722">78722</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78723">78723</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78724">78724</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78725">78725</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78726">78726</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78727">78727</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78728">78728</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78729">78729</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78730">78730</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78731">78731</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78732">78732</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78733">78733</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78734">78734</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78735">78735</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78736">78736</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78737">78737</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78738">78738</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78739">78739</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78741">78741</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78742">78742</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78744">78744</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78745">78745</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78746">78746</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78747">78747</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78748">78748</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78749">78749</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78750">78750</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78751">78751</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78752">78752</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78753">78753</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78754">78754</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78756">78756</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78757">78757</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78758">78758</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78759">78759</button></li>
+      </ul>
+    </div>
+
+    <div class="row">
+      
+      <div class="col-sm">
+        <div id="zipcode">
+          <img src="static/images/austin_zipcode_map.png" alt="" width="400" height="600">
+        </div>
+      </div>
+
+      <div class="col-sm">
+        <div class="col">
+          <div class="row">
+            <div id="unigram-div">
+              <img src="static/images/word_clouds/unigrams/unigram_78701.png" id="unigram-cloud" alt="unigram-cloud" width="300" height="300">
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div id="bigram-div">
+              <img src="static/images/word_clouds/bigrams/bigram_78701.png" id="bigram-cloud" alt="" width="300" height="300">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-sm">
+        <div class="col">
+          <div class="row">
+            <div id="unigram_plotly"></div>
+          </div>
+          <br>
+          <div class="row">
+            <div id="bigram_plotly"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
     <div class="spacer"></div>
   </div>
 
   <div class="divider" id="section4"></div>
 
   <div class="main" id="person3">
-    <!-- Hazel write your stuff here -->
-    <h2>Title</h2>
+    <!-- Third Section -->
+    <h2>Booking Map</h2>
     <p>
         Description of Hazel's stuff
     </p>
+    <div class='tableauPlaceholder' id='viz1579244566945' style='position: relative'>
+      <noscript>
+        <a href='#'>
+          <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ai&#47;AirbnbAustinRegions&#47;GroupBookingStory&#47;1_rss.png' style='border: none' />
+        </a>
+      </noscript>
+      <object class='tableauViz'  style='display:none;'>
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+        <param name='embed_code_version' value='3' />
+        <param name='site_root' value='' />
+        <param name='name' value='AirbnbAustinRegions&#47;GroupBookingStory' />
+        <param name='tabs' value='yes' /><param name='toolbar' value='yes' />
+        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ai&#47;AirbnbAustinRegions&#47;GroupBookingStory&#47;1.png' />
+        <param name='animate_transition' value='yes' />
+        <param name='display_static_image' value='yes' />
+        <param name='display_spinner' value='yes' />
+        <param name='display_overlay' value='yes' />
+        <param name='display_count' value='yes' />
+      </object>
+    </div>
+    <script type='text/javascript'>
+      var divElement = document.getElementById('viz1579244566945');
+      var vizElement = divElement.getElementsByTagName('object')[0];
+      vizElement.style.width='800px';vizElement.style.height='850px';
+      var scriptElement = document.createElement('script');
+      scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+      vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    </script>
+
     <div class="spacer"></div>
   </div>
 
   <div class="divider" id="section5"></div>
 
   <div class="main" id="person4">
-    <!-- Hayley write your stuff here -->
-    <h2>Title</h2>
+    <!-- Fourth Section -->
+    <h2>Superhost Identifier</h2>
     <p>
         Description of Hayley's stuff
     </p>
@@ -111,8 +238,8 @@
   <div class="divider" id="section6"></div>
 
   <div class="main" id="person5">
-    <!-- Paul write your stuff here -->
-    <h2>Title</h2>
+    <!-- Fifth Section -->
+    <h2>Data Insights</h2>
     <p>
         Description of Paul's stuff
     </p>
@@ -129,15 +256,19 @@
     </div>
   </footer>
   
-  <!-- <audio id="jingle" src="../static/resources/audio/.mp3"></audio> -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script> -->
-  <link rel="stylesheet" type="text/css" href="static/css/styles.css">
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  <!-- D3 JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.2/d3.js"></script>
+  <!-- Plotly -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <!-- API key -->
   <script type="text/javascript" src="static/js/config.js"></script>
   <!-- JS -->
   <script type="text/javascript" src="static/js/logic.js"></script>
-  <!-- <script src="https://d3plus.org/js/d3plus-plot.v0.8.full.min.js"></script> -->
-
 </body>
 
 </html>
