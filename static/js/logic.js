@@ -104,7 +104,8 @@ function createMap(sentiment_data) {
     const myMap = L.map("map", {
         center: [30.2672, -97.7431],
         zoom: 13,
-        layers: [streetmap, votePos]
+        layers: [streetmap, votePos],
+        scrollWheelZoom: false
     });
     
     L.control.layers(overlayMaps).addTo(myMap);
@@ -139,16 +140,16 @@ function ngramPlotly(ngram_data, id, zipcode) {
 
 // change plots based on zipcode
 async function getZipcode(zipcode_id){
-    const wordCloudDataUnigram = await d3.json("data/unigram.json").catch(error => console.warn(error));
+    const wordCloudDataUnigram = await d3.json("static/data/unigram.json").catch(error => console.warn(error));
     ngramPlotly(wordCloudDataUnigram, 'unigram_plotly', zipcode_id);
 
-    const wordCloudDataBigram = await d3.json("data/bigram.json").catch(error => console.warn(error));
+    const wordCloudDataBigram = await d3.json("static/data/bigram.json").catch(error => console.warn(error));
     ngramPlotly(wordCloudDataBigram, 'bigram_plotly', zipcode_id);
 
-    let unigram_image_path = "images/word_clouds/unigrams/unigram_"+ zipcode_id + ".png";
+    let unigram_image_path = "static/images/word_clouds/unigrams/unigram_"+ zipcode_id + ".png";
     d3.select("#unigram-cloud").attr("src", unigram_image_path);
 
-    let bigram_image_path = "images/word_clouds/bigrams/bigram_"+ zipcode_id + ".png";
+    let bigram_image_path = "static/images/word_clouds/bigrams/bigram_"+ zipcode_id + ".png";
     d3.select("#bigram-cloud").attr("src", bigram_image_path);
 }
 
@@ -156,12 +157,12 @@ async function getZipcode(zipcode_id){
 (async function(){
     let init_zipcode = "78701";
 
-    const sentimentData = await d3.csv("data/nlp_sentiment_results.csv").catch(error => console.warn(error));
+    const sentimentData = await d3.csv("static/data/nlp_sentiment_results.csv").catch(error => console.warn(error));
     createMap(sentimentData);
 
-    const wordCloudDataUnigram = await d3.json("data/unigram.json").catch(error => console.warn(error));
+    const wordCloudDataUnigram = await d3.json("static/data/unigram.json").catch(error => console.warn(error));
     ngramPlotly(wordCloudDataUnigram, 'unigram_plotly', init_zipcode)
 
-    const wordCloudDataBigram = await d3.json("data/bigram.json").catch(error => console.warn(error));
+    const wordCloudDataBigram = await d3.json("static/data/bigram.json").catch(error => console.warn(error));
     ngramPlotly(wordCloudDataBigram, 'bigram_plotly', init_zipcode)
 })()
