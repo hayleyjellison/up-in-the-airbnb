@@ -3,6 +3,7 @@ body {
     background-color: #ffffff; 
     font-family: 'Quicksand';
 }
+
 .navbar-custom { 
     background-color: #ffffff; 
 } 
@@ -19,11 +20,13 @@ h1 {
     color: #fd5c63;
     padding-bottom: 30px;
 }
+
 h2 {
     font-size: 2em;
     font-family: "Pacifico";
     color: #fd5c63;
 }
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -54,11 +57,13 @@ a, a:visited {
     text-decoration: none;
     position: relative;
     color: #fd5c63;
-  }
+}
+
 a:hover{
     color: #ff2f3a;
     text-decoration: none;
 }
+
 a:after, a:visited:after {
     content: '';
     height: 2px;
@@ -69,6 +74,7 @@ a:after, a:visited:after {
     background: #fd5c63;
     transition: 0.5s;
 }
+
 a:hover:after, a:visited:hover:after {
     width: 100%;
 }

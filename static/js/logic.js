@@ -16,7 +16,7 @@ function positivityClass(positivity){
      }
 }
 
-// function createMap(pos_data, neg_data) {
+// create sentiment map and allow markers to be switched out on command
 function createMap(sentiment_data) {
 
     // Define streetmap layer
@@ -32,8 +32,10 @@ function createMap(sentiment_data) {
     const longConfMarkers = [];
     const classifyMarkers = [];
 
+    // plot each type of marker
     sentiment_data.forEach(d => {
-        // Setting the marker radius for the state by passing population into the markerSize function
+        
+        // vote sentiment markers
         votePosMarkers.push(
             L.circle([d.latitude, d.longitude], {
             color: getColor(d.vote_sentiment_positivity),
@@ -47,6 +49,7 @@ function createMap(sentiment_data) {
                 "Link: " + "<a href=\"" + d.listing_url + "\" target=\"_blank\">" + d.listing_url + "</a>")
         );
 
+        // high confidence sentiment markers
         highConfMarkers.push(
             L.circle([d.latitude, d.longitude], {
             color: getColor(d.high_conf_sentiment_positivity),
@@ -60,6 +63,7 @@ function createMap(sentiment_data) {
                 "Link: " + "<a href=\"" + d.listing_url + "\" target=\"_blank\">" + d.listing_url + "</a>")
         );
 
+        // longest confidence sentiment markers
         longConfMarkers.push(
             L.circle([d.latitude, d.longitude], {
             color: getColor(d.long_conf_sentiment_positivity),
@@ -73,6 +77,7 @@ function createMap(sentiment_data) {
                 "Link: " + "<a href=\"" + d.listing_url + "\" target=\"_blank\">" + d.listing_url + "</a>")
         );
 
+        // classify sentiment markers
         classifyMarkers.push(
             L.circle([d.latitude, d.longitude], {
             color: getColor(d.classified_sentiment_positivity),
@@ -87,6 +92,7 @@ function createMap(sentiment_data) {
         );
     })
 
+    // place each marker type in a layer
     const votePos      = L.layerGroup(votePosMarkers);
     const highConf     = L.layerGroup(highConfMarkers);
     const longConf     = L.layerGroup(longConfMarkers);
@@ -111,6 +117,7 @@ function createMap(sentiment_data) {
     L.control.layers(overlayMaps).addTo(myMap);
 }
 
+// create plotly bar charts for ngram results
 function ngramPlotly(ngram_data, id, zipcode) {
     let prefix = ""
     if (id == "unigram_plotly"){

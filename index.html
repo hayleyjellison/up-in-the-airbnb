@@ -29,33 +29,33 @@
       <href class="navbar-brand airy" href="/">Up in the Air{bnb}</href>
     </nav>
     <div class="contentlist">
-        <ul>
-            <li>
-                <a href="#section1">About</a>   
-            </li>
-            <li>
-                <a href="#section2">Sentiment Map</a> 
-            </li>
-            <li>
-                <a href="#section3">Word Clouds</a> 
-            </li>
-            <li>
-                <a href="#section4">Booking Map</a> 
-            </li>
-            <li>
-                <a href="#section5">Superhost IDer</a>
-            </li>   
-            <li>
-                <a href="#section6">Review Writer</a>
-            </li>
-            <li>
-              <a href="#section7">Data Insights</a>
-          </li>
-        </ul>
+      <ul>
+        <li>
+          <a href="#section1">About</a>   
+        </li>
+        <li>
+          <a href="#section2">Sentiment Map</a> 
+        </li>
+        <li>
+          <a href="#section3">Word Clouds</a> 
+        </li>
+        <li>
+          <a href="#section4">Booking Map</a> 
+        </li>
+        <li>
+          <a href="#section5">Superhost IDer</a>
+        </li>   
+        <li>
+          <a href="#section6">Review Writer</a>
+        </li>
+        <li>
+          <a href="#section7">Data Insights</a>
+        </li>
+      </ul>
     </div>
-  <br>
-  <div class="divider spacer" id="section1"></div>
-  <br>
+
+  <div id="section1"></div>
+
   <div class="main" id="about">
     <!-- About Section -->
     <h1 class="page-title">Up in the Air{bnb}</h1>
@@ -68,7 +68,6 @@
       through rental reviews to find word association trends based on what area of
       the city the property is located in.
     </p>
-    <div class="spacer"></div>
   </div>
 
   <div class="divider" id="section2"></div>
@@ -76,22 +75,19 @@
   <div class="main" id="person1">
     <!-- First Section -->
     <h2>Sentiment Map</h2>
-    <p>(Red indicating a negative review sentiment, and Green indicating a positive review sentiment)</p>
+    <p>
+      (Red indicating a negative review sentiment, and Green indicating a positive review sentiment)
+    </p>
     <br><br>
     <div id="map"></div>
     <br><br>
     <p>
-        The data was loaded onto an AWS server, and John Snow's Spark NLP was used to
-        vectorize all of the reviews to assess their general sentiment ("positive"
-        or "negative"). After each review was analyzed, the data was joined to our
-        existing dataframes, and the following map was generated, showing each
-        Airbnb listing with the sentiment attached to their reviews.
+      The data was loaded onto an AWS server, and John Snow's Spark NLP was used to
+      vectorize all of the reviews to assess their general sentiment ("positive"
+      or "negative"). After each review was analyzed, the data was joined to our
+      existing dataframes, and the following map was generated, showing each
+      Airbnb listing with the sentiment attached to their reviews.
     </p>
-
-  <div class="container">
-  
-    <div class="spacer"></div>
-  </div>
   </div>
 
   <div class="divider" id="section3"></div>
@@ -196,19 +192,17 @@
     </div>
     <br><br>
     <p>
-        The text of the reviews was isolated and cleaned (with a lot of common words
-        like "a", "the", "and", etc. taken out). We were interested in seeing what
-        words were most popularly used in reviews in each zip code. During the first go-
-        around, the word frequencies seemed pretty homogenous, with most reviews having
-        the same few key words (like "clean" or "host" for example), which was not very
-        helpful. The data was reorganized, taking out these more common words, and we 
-        arrived at the final product.
+      The text of the reviews was isolated and cleaned (with a lot of common words
+      like "a", "the", "and", etc. taken out). We were interested in seeing what
+      words were most popularly used in reviews in each zip code. During the first go-
+      around, the word frequencies seemed pretty homogenous, with most reviews having
+      the same few key words (like "clean" or "host" for example), which was not very
+      helpful. The data was reorganized, taking out these more common words, and we 
+      arrived at the final product.
 
-        The word clouds and chart can be a useful indicator of what makes each zip code 
-        a unique place to stay.
+      The word clouds and chart can be a useful indicator of what makes each zip code 
+      a unique place to stay.
     </p>
-
-    <div class="spacer"></div>
   </div>
 
   <div class="divider" id="section4"></div>
@@ -217,38 +211,9 @@
     <!-- Third Section -->
     <h2>Booking Map</h2>
     <p>
-        (The maps can be interacted with, and there are several tabs of data presented)
+      (The maps can be interacted with, and there are several tabs of data presented)
     </p>
-    <div class='tableauPlaceholder' id='viz1579244566945' style='position: relative'>
-      <noscript>
-        <a href='#'>
-          <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ai&#47;AirbnbAustinRegions&#47;GroupBookingStory&#47;1_rss.png' style='border: none' />
-        </a>
-      </noscript>
-      <object class='tableauViz'  style='display:none;'>
-        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-        <param name='embed_code_version' value='3' />
-        <param name='site_root' value='' />
-        <param name='name' value='AirbnbAustinRegions&#47;GroupBookingStory' />
-        <param name='tabs' value='yes' /><param name='toolbar' value='yes' />
-        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ai&#47;AirbnbAustinRegions&#47;GroupBookingStory&#47;1.png' />
-        <param name='animate_transition' value='yes' />
-        <param name='display_static_image' value='yes' />
-        <param name='display_spinner' value='yes' />
-        <param name='display_overlay' value='yes' />
-        <param name='display_count' value='yes' />
-      </object>
-    </div>
-    <script type='text/javascript'>
-      var divElement = document.getElementById('viz1579244566945');
-      var vizElement = divElement.getElementsByTagName('object')[0];
-      vizElement.style.width='800px';vizElement.style.height='850px';
-      var scriptElement = document.createElement('script');
-      scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-      vizElement.parentNode.insertBefore(scriptElement, vizElement);
-    </script>
-
-    <div class="spacer"></div>
+    <div id="bookingMap" style="width:500px; margin:0 auto;" align="center"></div>
   </div>
 
   <div class="divider" id="section5"></div>
@@ -263,7 +228,6 @@
       machine learning modules, and were able to geta maximum accuracy of 89%
       correct guesses using a Random Forest.
     </p>
-    <div class="spacer"></div>
   </div>
 
   <div class="divider" id="section6"></div>
@@ -272,33 +236,33 @@
     <!-- Fifth Section -->
     <h2>Review Writer AI</h2>
     <p>
-        A dataframe of all the reviews was also created, linked to the listing they
-        were attached to as well as the average rating of that property. They were
-        all separated into three buckets as determined by their rating:
-        <br>
-        <br>0 stars - 2 stars ("bad")
-        <br>2.1 stars - 3.9 stars ("ok")
-        <br>4 stars - 5 stars ("good")
-        <br>
-        <br>Taking all the good ratings, we trained an ai using textgenrnn on top of
-        TensorFlow and Keras to write reviews based on our data. 
-        
-        Unfortunately we did not have enough time to train any ai besides the "good
-        ratings" one since there were 69 million characters to train from and by
-        the time we got to the "bad ratings" training, we realized there was 1000x
-        less data in that set, and we would have to run it way more times.
+      A dataframe of all the reviews was also created, linked to the listing they
+      were attached to as well as the average rating of that property. They were
+      all separated into three buckets as determined by their rating:
+      <br>
+      <br>0 stars - 2 stars ("bad")
+      <br>2.1 stars - 3.9 stars ("ok")
+      <br>4 stars - 5 stars ("good")
+      <br>
+      <br>Taking all the good ratings, we trained an ai using textgenrnn on top of
+      TensorFlow and Keras to write reviews based on our data. 
+      
+      Unfortunately we did not have enough time to train any AI besides the "good
+      ratings" one since there were 69 million characters to train from and by
+      the time we got to the "bad ratings" training, we realized there was 1000x
+      less data in that set, and we would have to run it way more times.
     </p>
     <br>
     <p>
-        What follows are snippets written by the "good ratings" AI with increasing
-        settings of temnperature (aka writing creativity). Smaller temperature values
-        indicate that the AI follows its training more closely.
+      What follows are snippets written by the "good ratings" AI with increasing
+      settings of temnperature (aka writing creativity). Smaller temperature values
+      indicate that the AI follows its training more closely.
       <br> <br>
       <code>
         ####################
         Temperature: 0.2
         ####################
-        
+        <br>
         The house is spacious and clean. The bed was super comfortable and the place is
         a great place to stay in Austin.  The house is spacious and clean. The house
         was clean and cozy. The house is in a great location and very clean.  We were
@@ -309,7 +273,7 @@
         ####################
         Temperature: 0.5
         ####################
-        
+        <br>
         ievine and the space was awesome! The house is in a great location for
         exploring Austin and want to stay in Austin and we would definitely stay here
         again. My boyfriend and I had a wonderful stay at the house. It's also a bit
@@ -320,14 +284,13 @@
         ####################
         Temperature: 1.0
         ####################
-        
+        <br>
         My husband and I attended the friend and he went out of his way to visit on
         shopping to all the Austin farex - clean, company and had good cassy giant
         in the eventing (and all the genek in the covering area I was really high &
         again when I get to the same channel trafficility was residential and qui
       </code>
     </p>
-    <div class="spacer"></div>
   </div>
 
 
@@ -337,54 +300,26 @@
     <!-- Fifth Section -->
     <h2>Data Insights</h2>
     <p>
-        There were additional trends we investigated while looking through the data,
-        ranging from various insights by location, over time, or overall. This
-        section showcases a few of those extra things that we thought were interesting.
+      There were additional trends we investigated while looking through the data,
+      ranging from various insights by location, over time, or overall. This
+      section showcases a few of those extra things that we thought were interesting.
     </p>
     <br>
-    <div class='tableauPlaceholder' id='viz1579359560367' style='position: relative'>
-      <noscript>
-        <a href='#'>
-          <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ai&#47;AirBnB-metrics-by-region&#47;Story1&#47;1_rss.png' style='border: none' />
-        </a>
-      </noscript>
-      <object class='tableauViz'  style='display:none;'>
-        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-        <param name='embed_code_version' value='3' /> <param name='site_root' value='' />
-        <param name='name' value='AirBnB-metrics-by-region&#47;Story1' />
-        <param name='tabs' value='no' /><param name='toolbar' value='yes' />
-        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ai&#47;AirBnB-metrics-by-region&#47;Story1&#47;1.png' />
-        <param name='animate_transition' value='yes' />
-        <param name='display_static_image' value='yes' />
-        <param name='display_spinner' value='yes' />
-        <param name='display_overlay' value='yes' />
-        <param name='display_count' value='yes' />
-        <param name='filter' value='publish=yes' />
-      </object>
-    </div>
-    <script type='text/javascript'>
-      var divElement = document.getElementById('viz1579359560367');
-      var vizElement = divElement.getElementsByTagName('object')[0];
-      vizElement.style.width='616px';vizElement.style.height='391px';
-      var scriptElement = document.createElement('script');
-      scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-      vizElement.parentNode.insertBefore(scriptElement, vizElement);
-    </script>
-    <br>
-    <br>
-    <div class='tableauPlaceholder' id='viz1579359716679' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ai&#47;AirbnbType&#47;AirbnbTypesStory&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='AirbnbType&#47;AirbnbTypesStory' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ai&#47;AirbnbType&#47;AirbnbTypesStory&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1579359716679');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='800px';vizElement.style.height='850px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-    <div class="spacer"></div>
-    <br><br>
-    <div class='tableauPlaceholder' id='viz1579363539038' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ai&#47;AirBnB-metrics-by-region&#47;AirBnBPropertyDetailsbyRegion&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='AirBnB-metrics-by-region&#47;AirBnBPropertyDetailsbyRegion' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ai&#47;AirBnB-metrics-by-region&#47;AirBnBPropertyDetailsbyRegion&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1579363539038');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1016px';vizElement.style.height='991px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-  </div>
+    
+    <div id="airbnbTypes" style="width:500px; margin:0 auto;" align="center"></div>
+    <div id="airbnbProperty" style="width:500px; margin:0 auto;" align="center"></div>
 
   <footer class="page-footer" style="background-color: #FFFFFF;">
     <div class="text-center py-3" style="font-size: 12px;">
-      Made with ❤️ by <a href="https://github.com/c-l-nguyen">Chris Nguyen</a>,
-            <a href="https://github.com/toestie">Nathan Wong</a>,
-            <a href="https://github.com/hazeldespain">Hazel Despain</a>,
-            <a href="https://github.com/hayleyjellison">Hayley Jellison</a>,
-            and <a href="https://github.com/paulvonderhaar">Paul Vonder Haar</a>
+      <a aria-label="Homepage" title="GitHub repo" class="footer-octicon" href="https://github.com/hayleyjellison/up-in-the-airbnb">
+        <svg height="18" width="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" ><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+      </a>
+      Made with ❤️ by 
+        <a href="https://github.com/c-l-nguyen">Chris Nguyen</a>,
+        <a href="https://github.com/toestie">Nathan Wong</a>,
+        <a href="https://github.com/hazeldespain">Hazel Despain</a>,
+        <a href="https://github.com/hayleyjellison">Hayley Jellison</a>,
+        and <a href="https://github.com/paulvonderhaar">Paul Vonder Haar</a>
     </div>
   </footer>
   
@@ -393,14 +328,18 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
+  <!-- Tableau Javascript API -->
+  <script src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
   <!-- D3 JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.2/d3.js"></script>
   <!-- Plotly -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <!-- API key -->
   <script type="text/javascript" src="static/js/config.js"></script>
-  <!-- JS -->
+  <!-- NLP JS -->
   <script type="text/javascript" src="static/js/logic.js"></script>
+  <!-- Tableau JS -->
+  <script type="text/javascript" src="static/js/tableau.js"></script>
 </body>
 
 </html>
