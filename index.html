@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <title>Up in the Airbnb</title>
+  <title>Up in the Air{bnb}</title>
   
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -24,38 +24,40 @@
 </head>
 
 <body>
-
-    <nav class="navbar sticky-top navbar-expand-lg navbar-custom">
-      <href class="navbar-brand airy" href="/">Up in the Air{bnb}</href>
-    </nav>
-    <div class="contentlist">
-      <ul>
-        <li>
-          <a href="#section1">About</a>   
-        </li>
-        <li>
-          <a href="#section2">Sentiment Map</a> 
-        </li>
-        <li>
-          <a href="#section3">Word Clouds</a> 
-        </li>
-        <li>
-          <a href="#section4">Booking Map</a> 
-        </li>
-        <li>
-          <a href="#section5">Superhost IDer</a>
-        </li>   
-        <li>
-          <a href="#section6">Review Writer</a>
-        </li>
-        <li>
-          <a href="#section7">Data Insights</a>
-        </li>
-      </ul>
-    </div>
-
   <div id="section1"></div>
 
+  <nav class="navbar sticky-top navbar-expand-lg navbar-custom">
+    <a href class="navbar-brand airy" href="/">Up in the Air{bnb}</a>
+  </nav>
+
+  <div class="contentlist">
+    <ul>
+      <li>
+        <a href="#section1">About</a>   
+      </li>
+      <li>
+        <a href="#section2">Sentiment Map</a> 
+      </li>
+      <li>
+        <a href="#section3">Word Clouds</a> 
+      </li>
+      <li>
+        <a href="#section4">Booking Map</a> 
+      </li>
+      <li>
+        <a href="#section5">Superhost IDer</a>
+      </li>   
+      <li>
+        <a href="#section6">Review Writer</a>
+      </li>
+      <li>
+        <a href="#section7">Data Insights</a>
+      </li>
+    </ul>
+  </div>
+  <!-------------------------------------------------------------------------------------------------------->
+  <!--------------------------------------------- Section 1 ------------------------------------------------>
+  <!-------------------------------------------------------------------------------------------------------->
   <div class="main" id="about">
     <!-- About Section -->
     <h1 class="page-title">Up in the Air{bnb}</h1>
@@ -69,7 +71,9 @@
       the city the property is located in.
     </p>
   </div>
-
+  <!-------------------------------------------------------------------------------------------------------->
+  <!--------------------------------------------- Section 2 ------------------------------------------------>
+  <!-------------------------------------------------------------------------------------------------------->
   <div class="divider" id="section2"></div>
 
   <div class="main" id="person1">
@@ -78,7 +82,7 @@
     <p>
       (Red indicating a negative review sentiment, and Green indicating a positive review sentiment)
     </p>
-    <br><br>
+    <br>
     <div id="map"></div>
     <br><br>
     <p>
@@ -89,7 +93,9 @@
       Airbnb listing with the sentiment attached to their reviews.
     </p>
   </div>
-
+  <!-------------------------------------------------------------------------------------------------------->
+  <!--------------------------------------------- Section 3 ------------------------------------------------>
+  <!-------------------------------------------------------------------------------------------------------->
   <div class="divider" id="section3"></div>
 
   <div class="main" id="person2">
@@ -101,7 +107,9 @@
     </div>
     <br>
     
-    <div class="btn-group">
+    <div class="container">
+      
+      <div class="btn-group">
       <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" id="dropdownMenuButton">
         Zipcode <span class="caret"></span>
       </button>
@@ -153,43 +161,45 @@
       </ul>
     </div>
 
-    <div class="row">
-      
-      <div class="col-sm">
-        <div id="zipcode">
-          <img src="static/images/austin_zipcode_map.png" alt="" width="400" height="600">
+      <div class="row">
+        <!-- zipcode map column -->
+        <div class="col-sm">
+          <div id="zipcode">
+            <img src="static/images/austin_zipcode_map.png" alt="" width="350" height="600">
+          </div>
         </div>
-      </div>
-
-      <div class="col-sm">
-        <div class="col">
-          <div class="row">
-            <div id="unigram-div">
-              <img src="static/images/word_clouds/unigrams/unigram_78701.png" id="unigram-cloud" alt="unigram-cloud" width="300" height="300">
+        <!-- word cloud column -->
+        <div class="col-sm">
+          <div class="col-sm">
+            <div class="row">
+              <div id="unigram-div">
+                <img src="static/images/word_clouds/unigrams/unigram_78701.png" id="unigram-cloud" alt="unigram-cloud" width="300" height="300">
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div id="bigram-div">
+                <img src="static/images/word_clouds/bigrams/bigram_78701.png" id="bigram-cloud" alt="" width="300" height="300">
+              </div>
             </div>
           </div>
-          <br>
-          <div class="row">
-            <div id="bigram-div">
-              <img src="static/images/word_clouds/bigrams/bigram_78701.png" id="bigram-cloud" alt="" width="300" height="300">
+        </div>
+        <!-- plotly column -->
+        <div class="col-sm">
+          <div class="col-sm">
+            <div class="row">
+              <div id="unigram_plotly"></div>
+            </div>
+            <br>
+            <div class="row">
+              <div id="bigram_plotly"></div>
             </div>
           </div>
         </div>
-      </div>
-      
-      <div class="col-sm">
-        <div class="col">
-          <div class="row">
-            <div id="unigram_plotly"></div>
-          </div>
-          <br>
-          <div class="row">
-            <div id="bigram_plotly"></div>
-          </div>
-        </div>
-      </div>
 
+      </div>
     </div>
+
     <br><br>
     <p>
       The text of the reviews was isolated and cleaned (with a lot of common words
@@ -204,7 +214,9 @@
       a unique place to stay.
     </p>
   </div>
-
+  <!-------------------------------------------------------------------------------------------------------->
+  <!--------------------------------------------- Section 4 ------------------------------------------------>
+  <!-------------------------------------------------------------------------------------------------------->
   <div class="divider" id="section4"></div>
 
   <div class="main" id="person3">
@@ -213,9 +225,11 @@
     <p>
       (The maps can be interacted with, and there are several tabs of data presented)
     </p>
-    <div id="bookingMap" style="width:500px; margin:0 auto;" align="center"></div>
+    <div id="bookingMap"></div>
   </div>
-
+  <!-------------------------------------------------------------------------------------------------------->
+  <!--------------------------------------------- Section 5 ------------------------------------------------>
+  <!-------------------------------------------------------------------------------------------------------->
   <div class="divider" id="section5"></div>
 
   <div class="main" id="person4">
@@ -229,7 +243,9 @@
       correct guesses using a Random Forest.
     </p>
   </div>
-
+  <!-------------------------------------------------------------------------------------------------------->
+  <!--------------------------------------------- Section 6 ------------------------------------------------>
+  <!-------------------------------------------------------------------------------------------------------->
   <div class="divider" id="section6"></div>
 
   <div class="main" id="person5">
@@ -292,8 +308,9 @@
       </code>
     </p>
   </div>
-
-
+  <!-------------------------------------------------------------------------------------------------------->
+  <!--------------------------------------------- Section 7 ------------------------------------------------>
+  <!-------------------------------------------------------------------------------------------------------->
   <div class="divider" id="section7"></div>
 
   <div class="main" id="person6">
@@ -306,9 +323,12 @@
     </p>
     <br>
     
-    <div id="airbnbTypes" style="width:500px; margin:0 auto;" align="center"></div>
-    <div id="airbnbProperty" style="width:500px; margin:0 auto;" align="center"></div>
-
+    <div id="airbnbTypes"></div>
+    <div id="airbnbProperty"></div>
+  </div>
+  <!-------------------------------------------------------------------------------------------------------->
+  <!--------------------------------------------- Footer ------------------------------------------------>
+  <!-------------------------------------------------------------------------------------------------------->
   <footer class="page-footer" style="background-color: #FFFFFF;">
     <div class="text-center py-3" style="font-size: 12px;">
       <a aria-label="Homepage" title="GitHub repo" class="footer-octicon" href="https://github.com/hayleyjellison/up-in-the-airbnb">
@@ -322,7 +342,10 @@
         and <a href="https://github.com/paulvonderhaar">Paul Vonder Haar</a>
     </div>
   </footer>
-  
+  <!-------------------------------------------------------------------------------------------------------->
+  <!--------------------------------------- Javascript Inclusions ------------------------------------------>
+  <!-------------------------------------------------------------------------------------------------------->
+
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -337,7 +360,7 @@
   <!-- API key -->
   <script type="text/javascript" src="static/js/config.js"></script>
   <!-- NLP JS -->
-  <script type="text/javascript" src="static/js/logic.js"></script>
+  <script type="text/javascript" src="static/js/nlp.js"></script>
   <!-- Tableau JS -->
   <script type="text/javascript" src="static/js/tableau.js"></script>
 </body>
