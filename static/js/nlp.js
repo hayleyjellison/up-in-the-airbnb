@@ -1,4 +1,6 @@
-// return color of circle
+//////////////////////////////////////////////////////////////////////////
+// return color of circle 
+//////////////////////////////////////////////////////////////////////////
 function getColor(positivity) {
   if (positivity == 1){
       return 'green'
@@ -6,8 +8,9 @@ function getColor(positivity) {
         return 'red'
     }
 }
-
+//////////////////////////////////////////////////////////////////////////
 // return what positivity rating is from boolean
+//////////////////////////////////////////////////////////////////////////
 function positivityClass(positivity){
   if (positivity == 1){
       return 'Positive'
@@ -16,7 +19,9 @@ function positivityClass(positivity){
     }
 }
 
+//////////////////////////////////////////////////////////////////////////
 // create sentiment map and allow markers to be switched out on command
+//////////////////////////////////////////////////////////////////////////
 function createMap(sentiment_data) {
 
   // Define streetmap layer
@@ -112,13 +117,21 @@ function createMap(sentiment_data) {
     center: [30.2672, -97.7431],
     zoom: 13,
     layers: [streetmap, votePos],
-    scrollWheelZoom: false
+    scrollWheelZoom: false,
+    zoomControl: false
   });
   
+  // note that L.Control and L.control totally different
+  
+  // add home button to reset to default center and zoom level
+  L.Control.zoomHome().addTo(myMap);
+
+  // add layers to map
   L.control.layers(overlayMaps).addTo(myMap);
 }
-
+//////////////////////////////////////////////////////////////////////////
 // create plotly bar charts for ngram results
+//////////////////////////////////////////////////////////////////////////
 function ngramPlotly(ngram_data, id, zipcode) {
   let prefix = ""
   if (id == "unigram_plotly"){
@@ -135,18 +148,25 @@ function ngramPlotly(ngram_data, id, zipcode) {
   }];
 
   let layout = {
+    title: "Top 10 " + prefix + "grams",
     autosize: false,
     width: 300,
     height: 300,
+    hovermode: 'closest',
+      margin : {
+        t:30,
+        b:30
+    },
     yaxis:{
       autorange:'reversed'
     }
   }
       
-  Plotly.newPlot(id, data, layout);
+  Plotly.newPlot(id, data, layout, {displayModeBar: false});
 }
-
+//////////////////////////////////////////////////////////////////////////
 // change plots based on zipcode
+//////////////////////////////////////////////////////////////////////////
 async function getZipcode(zipcode_id){
   const wordCloudDataUnigram = await d3.json("static/data/unigram.json").catch(error => console.warn(error));
   ngramPlotly(wordCloudDataUnigram, 'unigram_plotly', zipcode_id);
@@ -160,8 +180,9 @@ async function getZipcode(zipcode_id){
   let bigram_image_path = "static/images/word_clouds/bigrams/bigram_"+ zipcode_id + ".png";
   d3.select("#bigram-cloud").attr("src", bigram_image_path);
 }
-
+//////////////////////////////////////////////////////////////////////////
 // Load initial plots
+//////////////////////////////////////////////////////////////////////////
 (async function(){
   let init_zipcode = "78701";
 
