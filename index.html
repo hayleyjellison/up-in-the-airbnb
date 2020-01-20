@@ -29,7 +29,7 @@
 </head>
 
 <body>
-  <div id="section1"></div>
+  <div id="about"></div>
 
   <nav class="navbar sticky-top navbar-expand-lg navbar-custom">
     <a href class="navbar-brand airy cloud" href="/">Up in the Air{bnb}</a>
@@ -38,32 +38,32 @@
   <div class="contentlist">
     <ul>
       <li>
-        <a href="#section1" class="cloud">About</a>   
+        <a href="#about" class="cloud">About</a>
       </li>
       <li>
-        <a href="#section2" class="cloud">Sentiment Map</a> 
+        <a href="#datainsights" class="cloud">Data Insights</a>
       </li>
       <li>
-        <a href="#section3" class="cloud">Word Clouds</a> 
+        <a href="#booking" class="cloud">Booking Map</a>
       </li>
       <li>
-        <a href="#section4" class="cloud">Booking Map</a> 
+        <a href="#superhost" class="cloud">Superhost IDer</a>
+      </li> 
+      <li>
+        <a href="#sentiment" class="cloud">Sentiment Map</a>
       </li>
       <li>
-        <a href="#section5" class="cloud">Superhost IDer</a>
-      </li>   
+        <a href="#wordclouds" class="cloud">Word Clouds</a>
+      </li>  
       <li>
-        <a href="#section6" class="cloud">Review Writer</a>
-      </li>
-      <li>
-        <a href="#section7" class="cloud">Data Insights</a>
+        <a href="#review" class="cloud">Review Writer</a>
       </li>
     </ul>
   </div>
   <!-------------------------------------------------------------------------------------------------------->
-  <!--------------------------------------------- Section 1 ------------------------------------------------>
+  <!-------------------------------------------- About Section --------------------------------------------->
   <!-------------------------------------------------------------------------------------------------------->
-  <div class="main" id="about">
+  <div class="main">
     <!-- About Section -->
     <h1 class="page-title">Up in the Air{bnb}</h1>
     <p>
@@ -77,12 +77,55 @@
     </p>
   </div>
   <!-------------------------------------------------------------------------------------------------------->
-  <!--------------------------------------------- Section 2 ------------------------------------------------>
+  <!------------------------------------------- Data Insights ---------------------------------------------->
   <!-------------------------------------------------------------------------------------------------------->
-  <div class="divider" id="section2"></div>
+  <div class="divider" id="datainsights"></div>
+
+  <div class="main">
+    <h2>Data Insights</h2>
+    <p>
+      There were additional trends we investigated while looking through the data,
+      ranging from various insights by location, over time, or overall. This
+      section showcases a few of those extra things that we thought were interesting.
+    </p>
+    <br>
+    
+    <div id="airbnbTypes"></div>
+    <div id="airbnbProperty"></div>
+  </div>
+  <!-------------------------------------------------------------------------------------------------------->
+  <!-------------------------------------------- Booking Map ----------------------------------------------->
+  <!-------------------------------------------------------------------------------------------------------->
+  <div class="divider" id="booking"></div>
+
+  <div class="main">
+    <h2>Booking Map</h2>
+    <p>
+      (The maps can be interacted with, and there are several tabs of data presented)
+    </p>
+    <div id="bookingMap"></div>
+  </div>
+  <!-------------------------------------------------------------------------------------------------------->
+  <!-------------------------------------------- Superhost ID ---------------------------------------------->
+  <!-------------------------------------------------------------------------------------------------------->
+  <div class="divider" id="superhost"></div>
+
+  <div class="main">
+    <h2>Superhost Identifier</h2>
+    <p>
+      We also investigated classification of "super hosts", a title given to certain
+      hosts who fit a certain criterion(100 days of hosting, 4 star rating, 90%
+      response rate, etc). We put in 48 parameters into a variety of selection
+      machine learning modules, and were able to geta maximum accuracy of 89%
+      correct guesses using a Random Forest.
+    </p>
+  </div>
+  <!-------------------------------------------------------------------------------------------------------->
+  <!-------------------------------------------- Sentiment Map --------------------------------------------->
+  <!-------------------------------------------------------------------------------------------------------->
+  <div class="divider" id="sentiment"></div>
 
   <div class="main" id="person1">
-    <!-- First Section -->
     <h2>Sentiment Map</h2>
     <p>
       (Red indicating a negative review sentiment, and Green indicating a positive review sentiment)
@@ -99,12 +142,11 @@
     </p>
   </div>
   <!-------------------------------------------------------------------------------------------------------->
-  <!--------------------------------------------- Section 3 ------------------------------------------------>
+  <!-------------------------------------------- Word Clouds ----------------------------------------------->
   <!-------------------------------------------------------------------------------------------------------->
-  <div class="divider" id="section3"></div>
+  <div class="divider" id="wordclouds"></div>
 
-  <div class="main" id="person2">
-    <!-- Second Section -->
+  <div class="main">
     <h2>Word Clouds</h2>
     
     <div>
@@ -220,41 +262,12 @@
     </p>
   </div>
   <!-------------------------------------------------------------------------------------------------------->
-  <!--------------------------------------------- Section 4 ------------------------------------------------>
+  <!------------------------------------------- Review Writer ---------------------------------------------->
   <!-------------------------------------------------------------------------------------------------------->
-  <div class="divider" id="section4"></div>
+  <div class="divider" id="review"></div>
 
-  <div class="main" id="person3">
-    <!-- Third Section -->
-    <h2>Booking Map</h2>
-    <p>
-      (The maps can be interacted with, and there are several tabs of data presented)
-    </p>
-    <div id="bookingMap"></div>
-  </div>
-  <!-------------------------------------------------------------------------------------------------------->
-  <!--------------------------------------------- Section 5 ------------------------------------------------>
-  <!-------------------------------------------------------------------------------------------------------->
-  <div class="divider" id="section5"></div>
+  <div class="main">
 
-  <div class="main" id="person4">
-    <!-- Fourth Section -->
-    <h2>Superhost Identifier</h2>
-    <p>
-      We also investigated classification of "super hosts", a title given to certain
-      hosts who fit a certain criterion(100 days of hosting, 4 star rating, 90%
-      response rate, etc). We put in 48 parameters into a variety of selection
-      machine learning modules, and were able to geta maximum accuracy of 89%
-      correct guesses using a Random Forest.
-    </p>
-  </div>
-  <!-------------------------------------------------------------------------------------------------------->
-  <!--------------------------------------------- Section 6 ------------------------------------------------>
-  <!-------------------------------------------------------------------------------------------------------->
-  <div class="divider" id="section6"></div>
-
-  <div class="main" id="person5">
-    <!-- Fifth Section -->
     <h2>Review Writer AI</h2>
     <p>
       A dataframe of all the reviews was also created, linked to the listing they
@@ -312,24 +325,6 @@
         again when I get to the same channel trafficility was residential and qui
       </code>
     </p>
-  </div>
-  <!-------------------------------------------------------------------------------------------------------->
-  <!--------------------------------------------- Section 7 ------------------------------------------------>
-  <!-------------------------------------------------------------------------------------------------------->
-  <div class="divider" id="section7"></div>
-
-  <div class="main" id="person6">
-    <!-- Fifth Section -->
-    <h2>Data Insights</h2>
-    <p>
-      There were additional trends we investigated while looking through the data,
-      ranging from various insights by location, over time, or overall. This
-      section showcases a few of those extra things that we thought were interesting.
-    </p>
-    <br>
-    
-    <div id="airbnbTypes"></div>
-    <div id="airbnbProperty"></div>
   </div>
   <!-------------------------------------------------------------------------------------------------------->
   <!--------------------------------------------- Footer ------------------------------------------------>
