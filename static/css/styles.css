@@ -1,111 +1,130 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico|Quicksand&display=swap');
 body {
-    background-color: #ffffff; 
-    font-family: 'Quicksand';
+  background-color: #ffffff; 
+  font-family: 'Quicksand';
 }
+
 .navbar-custom { 
-    background-color: #ffffff; 
+  background-color: #ffffff; 
 } 
 
 .full-width {
-    position: absolute;
-    width: 100%;
-    left: 0;
+  position: absolute;
+  width: 100%;
+  left: 0;
 }
 
 h1 {
-    font-size: 5em;
-    font-family: "Pacifico";
-    color: #fd5c63;
-    padding-bottom: 30px;
-}
-h2 {
-    font-size: 2em;
-    font-family: "Pacifico";
-    color: #fd5c63;
-}
-ul {
-    list-style-type: none;
-    margin: 0;
-    margin-top: 10%;
+  font-size: 5em;
+  font-family: "Pacifico";
+  color: #fd5c63;
+  padding-bottom: 30px;
 }
 
-li {
-    display: inline-block;    
+h2 {
+  font-size: 2em;
+  font-family: "Pacifico";
+  color: #fd5c63;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  margin-top: 10%;
+  padding: 15%;
 }
 
 .contentlist {
-    height: auto;
-    width: 175px;
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
-    top: 30vh;
-    background-color: #ffffff;
-    overflow-x: hidden;
-    padding-top: 20px;
+  height: auto;
+  width: 175px;
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 30vh;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  padding-top: 20px;
 }
 
 .main {
-    margin-left: 125px;
-    padding: 0 50px;
+  margin-left: 125px;
+  padding: 0 50px;
 }
 
-a, a:visited {
-    text-decoration: none;
-    position: relative;
-    color: #fd5c63;
-  }
-a:hover{
-    color: #ff2f3a;
-    text-decoration: none;
+a.cloud, a.cloud:visited {
+  text-decoration: none;
+  position: relative;
+  color: #fd5c63;
 }
-a:after, a:visited:after {
-    content: '';
-    height: 2px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    background: #fd5c63;
-    transition: 0.5s;
+
+a.cloud:hover{
+  color: #ff2f3a;
+  text-decoration: none;
 }
-a:hover:after, a:visited:hover:after {
-    width: 100%;
+
+a.cloud:after, a.cloud:visited:after {
+  content: '';
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  background: #fd5c63;
+  transition: 0.5s;
+}
+
+a.cloud:hover:after, a.cloud:visited:hover:after {
+  width: 100%;
 }
 
 .airy {
-    font-family: "Pacifico";
-    color: #fd5c63;
+  font-family: "Pacifico";
+  color: #fd5c63;
 }
 
 p {
-    font-size: 1.25em;
-    padding-left: 10%;
+  font-size: 1.25em;
+  /* padding-left: 1%; */
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 .divider{
-    height: 60px;
+  height: 60px;
 }
 
 @media screen and (max-width: 700px) {
-    .contentlist {
-      width: 100%;
-      height: auto;
-      position: relative;
-    }
-    .contentlist a {float: left;}
-    .main {margin-left: 0;}
+  .contentlist {
+    width: 100%;
+    height: auto;
+    position: relative;
   }
+  .contentlist a {float: left;}
+  .main {margin-left: 0;}
+}
 
 .spacer{
-    height:250px;
+  height:250px;
+}
+
+.scrollable-menu {
+  height: auto;
+  max-height: 200px;
+  overflow-x: hidden;
 }
 
 #map {
-    height: 500px;
-    width: 90%;
+  height: 500px;
+  width: 90%;
+}
+
+.octicon{
+  display: inline-block;
+  vertical-align: text-top; 
+  fill: black
+}
+
+.octicon:hover{
+  fill: #fd5c63
 }
