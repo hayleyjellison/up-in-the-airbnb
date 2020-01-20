@@ -50,18 +50,18 @@ ul {
   padding: 0 50px;
 }
 
-a, a:visited {
+a.cloud, a.cloud:visited {
   text-decoration: none;
   position: relative;
   color: #fd5c63;
 }
 
-a:hover{
+a.cloud:hover{
   color: #ff2f3a;
   text-decoration: none;
 }
 
-a:after, a:visited:after {
+a.cloud:after, a.cloud:visited:after {
   content: '';
   height: 2px;
   position: absolute;
@@ -72,7 +72,7 @@ a:after, a:visited:after {
   transition: 0.5s;
 }
 
-a:hover:after, a:visited:hover:after {
+a.cloud:hover:after, a.cloud:visited:hover:after {
   width: 100%;
 }
 
@@ -117,4 +117,14 @@ html {
 #map {
   height: 500px;
   width: 90%;
+}
+
+.octicon{
+  display: inline-block;
+  vertical-align: text-top; 
+  fill: black
+}
+
+.octicon:hover{
+  fill: #fd5c63
 }
