@@ -31,12 +31,12 @@
 <body>
   <div id="about"></div>
 
-  <nav class="navbar sticky-top navbar-expand-lg navbar-custom">
+  <nav class="navbar sticky-top navbar-expand-lg navbar-custom banner">
     <a href class="navbar-brand airy cloud" href="/">Up in the Air{bnb}</a>
   </nav>
 
   <div class="contentlist">
-    <ul>
+    <ul class="content">
       <li>
         <a href="#about" class="cloud">About</a>
       </li>
@@ -67,14 +67,17 @@
     <!-- About Section -->
     <h1 class="page-title">Up in the Air{bnb}</h1>
     <p>
-      We are taking data from Airbnb properties around Austin, Texas to analyze the
-      new market of room/house rental and how it affects the existing housing and
-      hotel industries. This data includes the listings's cost per night, zip code,
-      rating, availability, and more. We will use machine learning to create a value
-      guesser when given certain parameters about the Airbnb property, as well as go
-      through rental reviews to find word association trends based on what area of
-      the city the property is located in.
+      Founded in 2008, Airbnb has been a blockbuster hit with the number of guests that have been served skyrocketing throughout the 2010s as an alternative to traditional hotels. As it prepares to go public this year, we wanted to specifically focus in on the Austin market for Airbnb rentals as local SMEs (Subject Matter Experts. Since we live here too!) to determine what the unique "characteristics" of Austin Airbnbs are. Here, we analyze and present an open dataset from <a href="http://insideairbnb.com/index.html" target="_blank"> Inside Airbnb </a> that includes a listing's cost per night, zip code, ratings, availability, and more. 
+      <br>
+      <br>
+      Using Tableau, AWS, Databricks, the Spark NLP library from John Snow Labs, and Javascript libraries, we aim to present what makes Austin Airbnbs weird.
     </p>
+
+    <figure >
+      <img src="https://cdn.statcdn.com/Infographic/images/normal/20386.jpeg" alt="Infographic: New Year's Peak Illustrates Airbnb's Growing Stature | Statista" width="50%" height="auto" style="width: 50%; height: auto !important; max-width:960px;-ms-interpolation-mode: bicubic;" class="about-img">
+      <figcaption>Fig.1 - Airbnb's Massive Growth from 2009-2019</figcaption>
+    </figure>
+
   </div>
   <!-------------------------------------------------------------------------------------------------------->
   <!------------------------------------------- Data Insights ---------------------------------------------->
@@ -83,14 +86,14 @@
 
   <div class="main">
     <h2>Data Insights</h2>
+    <h3>by Hayley</h3>
     <p>
-      There were additional trends we investigated while looking through the data,
-      ranging from various insights by location, over time, or overall. This
-      section showcases a few of those extra things that we thought were interesting.
+      These are basic charts and plots that we did to investigate certain details of the Austin Airbnb listings, such as property and room types by region, average fees, average number of guests, and minimum nights.
     </p>
     <br>
-    
     <div id="airbnbTypes"></div>
+    <br>
+    <br>
     <div id="airbnbProperty"></div>
   </div>
   <!-------------------------------------------------------------------------------------------------------->
@@ -100,9 +103,11 @@
 
   <div class="main">
     <h2>Booking Map</h2>
+    <h3>by Hazel</h3>
     <p>
-      (The maps can be interacted with, and there are several tabs of data presented)
+      These are maps made in Tableau to show the distribution of Airbnb listings' price level distributions across the Austin area. A helpful tooltip is provided to show metadata information about each listing and a reference link to the listing on the Airbnb site.
     </p>
+    <br>
     <div id="bookingMap"></div>
   </div>
   <!-------------------------------------------------------------------------------------------------------->
@@ -112,6 +117,7 @@
 
   <div class="main">
     <h2>Superhost Identifier</h2>
+    <h3>by Paul & Chris</h3>
     <p>
       We also investigated classification of "super hosts", a title given to certain
       hosts who fit a certain criterion(100 days of hosting, 4 star rating, 90%
@@ -127,19 +133,38 @@
 
   <div class="main" id="person1">
     <h2>Sentiment Map</h2>
+    <h3>by Chris</h3>
     <p>
-      (Red indicating a negative review sentiment, and Green indicating a positive review sentiment)
+      The review data was loaded onto an AWS Postgres server and John Snow Lab's Spark NLP library was used to vectorize all of the reviews to assess each sentence's general sentiment ("<mark class="green">positive</mark>" or "<mark class="red">negative</mark>"). After each review was analyzed, the sentiments were aggregated in various ways to assess the review's "overall" sentiment. Each aggregation could produce wildly different results so they were compared to the overall star rating of each listing as a measure of accuracy.
+      <br>
+      <br>
+      Note that Airbnb reviews are overwhelmingly positive (the average rating was about 4.8 stars in the dataset!) so each aggregation's results are as follows:
+
+      <ul>
+        <li>
+          Vote Sentiment (positive if number of positive sentences > number of negative sentences)
+          <br>
+          16%
+        </li>
+        <li>
+          Highest Confidence Sentiment (sentiment of highest confidence level sentence in review)
+          <br>
+          81%
+        </li>
+        <li>
+          Longest Sentence Sentiment (sentiment of longest sentence in review)
+          <br>
+          48%
+        </li>
+        <li>
+          Classified Sentiment (distance function based on comparing lengths of positive vs negative sentences determines sentiment)
+          <br>
+          65%
+        </li>
+      </ul>
     </p>
     <br>
     <div id="map"></div>
-    <br><br>
-    <p>
-      The data was loaded onto an AWS server, and John Snow's Spark NLP was used to
-      vectorize all of the reviews to assess their general sentiment ("positive"
-      or "negative"). After each review was analyzed, the data was joined to our
-      existing dataframes, and the following map was generated, showing each
-      Airbnb listing with the sentiment attached to their reviews.
-    </p>
   </div>
   <!-------------------------------------------------------------------------------------------------------->
   <!-------------------------------------------- Word Clouds ----------------------------------------------->
@@ -148,67 +173,68 @@
 
   <div class="main">
     <h2>Word Clouds</h2>
-    
+    <h3>by Chris</h3>
     <div>
       <script src="https://gist.github.com/c-l-nguyen/4c31e6ed367290b9d2c4682f7017e985.js"></script>
     </div>
     <br>
-    
+
     <div class="container">
       
       <div class="btn-group">
-      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" id="dropdownMenuButton">
-        Zipcode <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu scrollable-menu" role="menu">
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78701">78701</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78702">78702</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78703">78703</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78704">78704</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78705">78705</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78712">78712</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78717">78717</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78719">78719</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78721">78721</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78722">78722</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78723">78723</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78724">78724</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78725">78725</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78726">78726</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78727">78727</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78728">78728</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78729">78729</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78730">78730</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78731">78731</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78732">78732</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78733">78733</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78734">78734</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78735">78735</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78736">78736</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78737">78737</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78738">78738</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78739">78739</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78741">78741</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78742">78742</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78744">78744</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78745">78745</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78746">78746</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78747">78747</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78748">78748</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78749">78749</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78750">78750</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78751">78751</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78752">78752</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78753">78753</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78754">78754</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78756">78756</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78757">78757</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78758">78758</button></li>
-        <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78759">78759</button></li>
-      </ul>
-    </div>
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" id="dropdownMenuButton">
+          Zipcode <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu scrollable-menu" role="menu">
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78701">78701</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78702">78702</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78703">78703</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78704">78704</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78705">78705</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78712">78712</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78717">78717</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78719">78719</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78721">78721</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78722">78722</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78723">78723</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78724">78724</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78725">78725</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78726">78726</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78727">78727</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78728">78728</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78729">78729</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78730">78730</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78731">78731</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78732">78732</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78733">78733</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78734">78734</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78735">78735</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78736">78736</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78737">78737</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78738">78738</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78739">78739</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78741">78741</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78742">78742</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78744">78744</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78745">78745</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78746">78746</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78747">78747</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78748">78748</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78749">78749</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78750">78750</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78751">78751</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78752">78752</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78753">78753</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78754">78754</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78756">78756</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78757">78757</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78758">78758</button></li>
+          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78759">78759</button></li>
+        </ul>
+      </div>
 
       <div class="row">
+
         <!-- zipcode map column -->
         <div class="col-sm">
           <div id="zipcode">
@@ -269,6 +295,7 @@
   <div class="main">
 
     <h2>Review Writer AI</h2>
+    <h3>by Nathan</h3>
     <p>
       A dataframe of all the reviews was also created, linked to the listing they
       were attached to as well as the average rating of that property. They were

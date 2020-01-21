@@ -1,6 +1,6 @@
 ![airbnb](static/images/newairbnb.jpeg)
 
-# AirBnB-Project
+# Up in the Air{bnb}
 https://hayleyjellison.github.io/up-in-the-airbnb/
 
 ## Group Members
@@ -11,13 +11,6 @@ https://hayleyjellison.github.io/up-in-the-airbnb/
 * Nathan Wong (Lead Web Developer): [@toestie](https://github.com/toestie)
 * Paul Vonder Haar (Data Engineer): [@paulvonderhaar](https://github.com/paulvonderhaar)
 
-## Data Sources
-* https://www.kaggle.com/dataset/fc7a2d436d47f21c86242da9adf324f18b36d12fefb8defd111fc53ecf8f9304
-* http://insideairbnb.com/index.html
-
-## Tutorials
-* https://www.datacamp.com/community/tutorials/wordcloud-python
-
 We are taking data from Airbnb properties around Austin, Texas to analyze the new market of room/house rental and how it affects the existing housing and hotel industries. This data includes the listings's cost per night, zip code, rating, availability, and more. We will use machine learning to create a value guesser when given certain parameters about the Airbnb property, as well as go through rental reviews to find word association trends based on what area of the city the property is located in. The metrics we will use to evaluate our ml model will include the r2 value and classification point. We will clean this data by getting rid of filler words in reviews such as "the", "of", & "and". We plan on training our model with AWS and Databricks and we will demonstrate our model using a web app.
 
 We will be using:
@@ -26,12 +19,20 @@ We will be using:
 * SVM
 * Logistic Regression
 
-WHAT? 
-1. Machine Learning property value evaluator
-2. Word association analysis (word cloud?)
+WHAT
+1. Review AI Generator
+2. Word cloud analysis
 3. Superhost classification
 4. Review score analysis
 
-WHY? 
+WHY
 1. Airbnb is a new industry - affecting housing market and hotel business 
 2. Room rental is very popular right now- what unique qualities do Airbnb's in Austin have -> what can you do to make your listing more successful here??
+
+## Data Sources
+* https://www.kaggle.com/dataset/fc7a2d436d47f21c86242da9adf324f18b36d12fefb8defd111fc53ecf8f9304
+* http://insideairbnb.com/index.html
+
+## References
+* https://brandongaille.com/24-airbnb-hotel-industry-statistics-and-trends/
+* https://www.datacamp.com/community/tutorials/wordcloud-python
