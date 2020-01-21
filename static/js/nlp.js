@@ -195,3 +195,17 @@ async function getZipcode(zipcode_id){
   const wordCloudDataBigram = await d3.json("static/data/bigram.json").catch(error => console.warn(error));
   ngramPlotly(wordCloudDataBigram, 'bigram_plotly', init_zipcode)
 })()
+
+// var lastScrollTop = 0;
+// $(window).scroll(function(){
+//   var st = $(this).scrollTop();
+//   var banner = $('.banner');
+//   setTimeout(function(){
+//     if (st > lastScrollTop){
+//       banner.addClass('hide');
+//     } else {
+//       banner.removeClass('hide');
+//     }
+//     lastScrollTop = st;
+//   }, 100);
+// });

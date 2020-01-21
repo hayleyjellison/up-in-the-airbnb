@@ -14,7 +14,7 @@
   };
 
   new tableau.Viz(bookingMapContainer, bookingMapURL, options);
-  new tableau.Viz(airbnbTypesContainer, airbnbTypesURL, options);
+  new tableau.Viz(airbnbTypesContainer, airbnbTypesURL, {hideTabs: true});
   new tableau.Viz(airbnbPropertyContainer, airbnbPropertyURL, options);
   
 })()
