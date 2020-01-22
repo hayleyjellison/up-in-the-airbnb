@@ -31,7 +31,7 @@
 <body>
   <div id="about"></div>
 
-  <nav class="navbar sticky-top navbar-expand-lg navbar-custom banner">
+  <nav id="navbar" class="navbar sticky-top navbar-expand-lg navbar-custom banner">
     <a href class="navbar-brand airy cloud" href="/">Up in the Air{bnb}</a>
   </nav>
 
@@ -47,9 +47,6 @@
         <a href="#booking" class="cloud">Booking Map</a>
       </li>
       <li>
-        <a href="#superhost" class="cloud">Superhost IDer</a>
-      </li> 
-      <li>
         <a href="#sentiment" class="cloud">Sentiment Map</a>
       </li>
       <li>
@@ -58,6 +55,9 @@
       <li>
         <a href="#review" class="cloud">Review Writer</a>
       </li>
+      <li>
+        <a href="#future" class="cloud">Future Analysis</a>
+      </li>
     </ul>
   </div>
   <!-------------------------------------------------------------------------------------------------------->
@@ -65,17 +65,21 @@
   <!-------------------------------------------------------------------------------------------------------->
   <div class="main">
     <!-- About Section -->
+    <br>
     <h1 class="page-title">Up in the Air{bnb}</h1>
+    <h2>About</h2>
     <p>
       Founded in 2008, Airbnb has been a blockbuster hit with the number of guests that have been served skyrocketing throughout the 2010s as an alternative to traditional hotels. As it prepares to go public this year, we wanted to specifically focus in on the Austin market for Airbnb rentals as local SMEs (Subject Matter Experts. Since we live here too!) to determine what the unique "characteristics" of Austin Airbnbs are. Here, we analyze and present an open dataset from <a href="http://insideairbnb.com/index.html" target="_blank"> Inside Airbnb </a> that includes a listing's cost per night, zip code, ratings, availability, and more. 
       <br>
       <br>
-      Using Tableau, AWS, Databricks, the Spark NLP library from John Snow Labs, and Javascript libraries, we aim to present what makes Austin Airbnbs weird.
+      Using Python, Tableau, AWS, Databricks, the John Snow Labs Spark NLP library, and Javascript libraries, we aim to present what makes Austin Airbnbs weird.
     </p>
 
     <figure >
       <img src="https://cdn.statcdn.com/Infographic/images/normal/20386.jpeg" alt="Infographic: New Year's Peak Illustrates Airbnb's Growing Stature | Statista" width="50%" height="auto" style="width: 50%; height: auto !important; max-width:960px;-ms-interpolation-mode: bicubic;" class="about-img">
-      <figcaption>Fig.1 - Airbnb's Massive Growth from 2009-2019</figcaption>
+      <figcaption>
+        Fig.1 - Airbnb's Massive Growth from 2009-2019. <a href="https://www.statista.com/chart/20386/guests-staying-at-airbnb-appartments-on-new-years-eve/" target="_blank">Source</a>
+      </figcaption>
     </figure>
 
   </div>
@@ -109,22 +113,6 @@
     </p>
     <br>
     <div id="bookingMap"></div>
-  </div>
-  <!-------------------------------------------------------------------------------------------------------->
-  <!-------------------------------------------- Superhost ID ---------------------------------------------->
-  <!-------------------------------------------------------------------------------------------------------->
-  <div class="divider" id="superhost"></div>
-
-  <div class="main">
-    <h2>Superhost Identifier</h2>
-    <h3>by Paul & Chris</h3>
-    <p>
-      We also investigated classification of "super hosts", a title given to certain
-      hosts who fit a certain criterion(100 days of hosting, 4 star rating, 90%
-      response rate, etc). We put in 48 parameters into a variety of selection
-      machine learning modules, and were able to geta maximum accuracy of 89%
-      correct guesses using a Random Forest.
-    </p>
   </div>
   <!-------------------------------------------------------------------------------------------------------->
   <!-------------------------------------------- Sentiment Map --------------------------------------------->
@@ -297,37 +285,24 @@
     <h2>Review Writer AI</h2>
     <h3>by Nathan</h3>
     <p>
-      A dataframe of all the reviews was also created, linked to the listing they
-      were attached to as well as the average rating of that property. They were
-      all separated into three buckets as determined by their rating:
+      A dataframe of all the reviews was also created, linked to the listing they were attached to as well as the average rating of that property. They were all separated into three buckets as determined by their rating:
       <br>
       <br>0 stars - 2 stars ("bad")
       <br>2.1 stars - 3.9 stars ("ok")
       <br>4 stars - 5 stars ("good")
       <br>
-      <br>Taking all the good ratings, we trained an ai using textgenrnn on top of
-      TensorFlow and Keras to write reviews based on our data. 
-      
-      Unfortunately we did not have enough time to train any AI besides the "good
-      ratings" one since there were 69 million characters to train from and by
-      the time we got to the "bad ratings" training, we realized there was 1000x
-      less data in that set, and we would have to run it way more times.
+      <br>Taking all the good ratings, we trained AI using textgenrnn on top of TensorFlow and Keras to write reviews based on our data. Unfortunately, we did not have enough time to train any AI besides the "good ratings" one since there were 69 million characters to train from and by the time we got to the "bad ratings" training, we realized there was 1000x less data in that set, and we would have to run it many more times.
     </p>
     <br>
     <p>
-      What follows are snippets written by the "good ratings" AI with increasing
-      settings of temnperature (aka writing creativity). Smaller temperature values
-      indicate that the AI follows its training more closely.
+      What follows are snippets written by the "good ratings" AI with increasing settings of temperature (aka writing creativity). Smaller temperature values indicate that the AI follows its training more closely.
       <br> <br>
       <code>
         ####################
         Temperature: 0.2
         ####################
         <br>
-        The house is spacious and clean. The bed was super comfortable and the place is
-        a great place to stay in Austin.  The house is spacious and clean. The house
-        was clean and cozy. The house is in a great location and very clean.  We were
-        able to walk
+        The house is spacious and clean. The bed was super comfortable and the place is a great place to stay in Austin.  The house is spacious and clean. The house was clean and cozy. The house is in a great location and very clean.  We were able to walk
       </code>
       <br> <br>
       <code>
@@ -335,10 +310,7 @@
         Temperature: 0.5
         ####################
         <br>
-        ievine and the space was awesome! The house is in a great location for
-        exploring Austin and want to stay in Austin and we would definitely stay here
-        again. My boyfriend and I had a wonderful stay at the house. It's also a bit
-        of a place to stay in a great location and close to everything in Austin
+        ievine and the space was awesome! The house is in a great location for exploring Austin and want to stay in Austin and we would definitely stay here again. My boyfriend and I had a wonderful stay at the house. It's also a bit of a place to stay in a great location and close to everything in Austin
       </code>
       <br> <br>
       <code>
@@ -346,12 +318,23 @@
         Temperature: 1.0
         ####################
         <br>
-        My husband and I attended the friend and he went out of his way to visit on
-        shopping to all the Austin farex - clean, company and had good cassy giant
-        in the eventing (and all the genek in the covering area I was really high &
-        again when I get to the same channel trafficility was residential and qui
+        My husband and I attended the friend and he went out of his way to visit on shopping to all the Austin farex - clean, company and had good cassy giant in the eventing (and all the genek in the covering area I was really high & again when I get to the same channel trafficility was residential and qui
       </code>
     </p>
+  </div>
+  <!-------------------------------------------------------------------------------------------------------->
+  <!----------------------------------------- Future Directions -------------------------------------------->
+  <!-------------------------------------------------------------------------------------------------------->
+  <div class="divider" id="future"></div>
+
+  <div class="main">
+
+    <h2>Future Analysis Directions</h2>
+
+    <p>
+      There are many future directions that we can take our analysis.
+    </p>
+
   </div>
   <!-------------------------------------------------------------------------------------------------------->
   <!--------------------------------------------- Footer ------------------------------------------------>
@@ -392,6 +375,9 @@
   <script type="text/javascript" src="static/js/nlp.js"></script>
   <!-- Tableau JS -->
   <script type="text/javascript" src="static/js/tableau.js"></script>
+  <!-- Misc JS -->
+  <script type="text/javascript" src="static/js/logic.js"></script>
+
 </body>
 
 </html>

@@ -9,12 +9,12 @@
   let airbnbPropertyContainer = document.getElementById("airbnbProperty");
   let airbnbPropertyURL = "https://public.tableau.com/views/AirBnB-metrics-by-region/AirBnBPropertyDetailsbyRegion";
 
-  let options = {
-      // hideTabs: true
+  let hideOptions = {
+      hideTabs: true
   };
 
-  new tableau.Viz(bookingMapContainer, bookingMapURL, options);
-  new tableau.Viz(airbnbTypesContainer, airbnbTypesURL, {hideTabs: true});
-  new tableau.Viz(airbnbPropertyContainer, airbnbPropertyURL, options);
+  new tableau.Viz(bookingMapContainer, bookingMapURL, hideOptions);
+  new tableau.Viz(airbnbTypesContainer, airbnbTypesURL, hideOptions);
+  new tableau.Viz(airbnbPropertyContainer, airbnbPropertyURL);
   
 })()
