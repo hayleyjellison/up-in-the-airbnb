@@ -4,6 +4,13 @@ body {
   font-family: 'Quicksand';
 }
 
+#navbar {
+  position: fixed; /* Make it stick/fixed */
+  top: -50px; /* Hide the navbar 50 px outside of the top view */
+  width: 100%; /* Full width */
+  transition: top 0.3s; /* Transition effect when sliding down (and up) */
+}
+
 .navbar-custom { 
   background-color: #ffffff; 
 } 
@@ -160,17 +167,3 @@ mark.green {
   color:green;
   background: none;
 }
-/* 
-.banner {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 0px;
-  background: tomato;
-  text-align: center;
-  transition: transform 300ms;
-}
-  .hide {
-    transform: translateY(-50px);
-  } */
