@@ -168,7 +168,7 @@ mark.green {
   background: none;
 }
 
-/* #unigram-cloud {
+#unigram-cloud {
   height: 300px;
   width: 300px;
 }
@@ -176,4 +176,4 @@ mark.green {
 #bigram-cloud {
   height: 300px;
   width: 300px;
-} */
+}
