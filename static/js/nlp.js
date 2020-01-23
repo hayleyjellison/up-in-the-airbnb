@@ -135,13 +135,10 @@ function createMap(sentiment_data) {
 function ngramPlotly(ngram_data, id, zipcode) {
   // determine prefix from input id for text
   let prefix = "";
-  let fignum = 0;
   if (id == "unigram_plotly"){
     prefix = "uni";
-    fignum = 5;
   } else {
     prefix = "bi";
-    fignum = 6;
   }
 
   let data = [{
@@ -152,33 +149,17 @@ function ngramPlotly(ngram_data, id, zipcode) {
   }];
 
   let layout = {
-    // title: "Top 10 " + prefix + "grams",
     autosize: false,
     width: 300,
     height: 300,
     hovermode: 'closest',
-      margin : {
+    margin : {
         t:55,
         b:55
     },
     yaxis:{
       autorange:'reversed'
-    },
-    annotations: [{
-      xref: 'paper',
-      yref: 'paper',
-      x: -.2,
-      xanchor: 'left',
-      y: -0.1,
-      yanchor: 'top',
-      text: 'Fig.' + fignum + ' - Top 10 ' + prefix + 'grams',
-      showarrow: false,
-      font: {
-        color: "black",
-        size: 15,
-        family: 'Quicksand'
-      }
-    }]
+    }
   };
       
   Plotly.newPlot(id, data, layout, {displayModeBar: false});
@@ -187,13 +168,6 @@ function ngramPlotly(ngram_data, id, zipcode) {
 // create anychart word clouds for ngram results
 //////////////////////////////////////////////////////////////////////////
 function buildWordCloud(wordData, id, zipcode){
-  // determine prefix from input id for text
-  let prefix = "";
-  if (id == "unigram-cloud"){
-    prefix = "Uni";
-  } else {
-    prefix = "Bi";
-  }
 
   // wipe out HTML under div id for refresh
   document.getElementById(id).innerHTML = "";
@@ -204,8 +178,6 @@ function buildWordCloud(wordData, id, zipcode){
     // create a tag (word) cloud chart
     let chart = anychart.tagCloud(wordCloudData);
 
-    // set a chart title
-    chart.title(prefix+ 'grams');
     // set an array of angles at which the words will be laid out
     chart.angles([0, 270]);
 
