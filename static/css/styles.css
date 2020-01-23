@@ -4,6 +4,13 @@ body {
   font-family: 'Quicksand';
 }
 
+#navbar {
+  position: fixed; /* Make it stick/fixed */
+  top: -50px; /* Hide the navbar 50 px outside of the top view */
+  width: 100%; /* Full width */
+  transition: top 0.3s; /* Transition effect when sliding down (and up) */
+}
+
 .navbar-custom { 
   background-color: #ffffff; 
 } 
@@ -27,7 +34,13 @@ h2 {
   color: #fd5c63;
 }
 
-ul {
+h3 {
+  font-size: 1em;
+  font-family: "Pacifico";
+  color: #fd5c63;
+}
+
+ul.content {
   list-style-type: none;
   margin: 0;
   margin-top: 10%;
@@ -128,3 +141,39 @@ html {
 .octicon:hover{
   fill: #fd5c63
 }
+
+.about-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+figure {
+  display: inline-block;
+  text-align: center;
+  margin: 5px;
+}
+
+figure img {
+  vertical-align: top;
+}
+
+mark.red {
+  color:red;
+  background: none;
+}
+
+mark.green {
+  color:green;
+  background: none;
+}
+
+/* #unigram-cloud {
+  height: 300px;
+  width: 300px;
+}
+
+#bigram-cloud {
+  height: 300px;
+  width: 300px;
+} */
