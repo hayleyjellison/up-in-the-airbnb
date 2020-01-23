@@ -167,7 +167,7 @@
       The text of the reviews were isolated and cleaned (with a lot of common words and stopwords like "a", "the", "and", etc. taken out). We were interested in seeing what words were most uniquely popular in reviews for each zipcode. During our first analysis, the word frequencies seemed very homogenous, with most reviews having the same few key words (like "clean" or "host" for example), which was not very helpful in determing what made each area unique. The text was cleaned, taking out these more common words, and we arrived at the final dashboard below. The word clouds and bar charts can be a useful indicator of what makes each zipcode a unique place to stay in.
       <br>
       <br>
-      The pipeline for the John Snow Spark NLP library was much like the one for the sentiment map, except that this time the pipeline was set up to tokenize sentences, remove stopwords, and determine both the unigram and bigrams that occurred in the text.
+      The pipeline for the John Snow Spark NLP library was much like the one for the sentiment map, except that this time the pipeline was set up to tokenize sentences, remove stopwords, and determine both the most common unigram (single words) and bigrams (word pairings) that occurred in the text. Bigrams were considered as people tend to describe things in an adjective-noun pattern (such as  "clean house" or "great host").
     </p>
 
     <div>
@@ -189,34 +189,17 @@
         <!-- zipcode map column -->
         <div class="col-sm">
           <div id="zipcode" style= "width:100%; height:100%">
-            <!-- <img src="static/images/austin_zipcode_map.png" alt="" width="350" height="600"> -->
           </div>
         </div>
         <!-- word cloud column -->
         <div class="col-sm">
           <div class="col-sm">
             <div class="row">
-              <div id="unigram-cloud">
-                <!-- <img src="static/images/word_clouds/unigrams/unigram_78701.png" id="unigram-cloud" alt="unigram-cloud" width="300" height="300"> -->
-              </div>
-                <!-- <figure >
-                  <img src="static/images/word_clouds/unigrams/unigram_78701.png" id="unigram-cloud" alt="unigram-cloud" width="300" height="300">
-                  <figcaption>
-                    Fig.3 - Unigram Word Cloud
-                  </figcaption>
-                </figure> -->
+              <div id="unigram-cloud"></div>
             </div>
             <br>
             <div class="row">
-              <div id="bigram-cloud">
-                <!-- <img src="static/images/word_clouds/bigrams/bigram_78701.png" id="bigram-cloud" alt="" width="300" height="300"> -->
-              </div>
-              <!-- <figure >
-                <img src="static/images/word_clouds/bigrams/bigram_78701.png" id="bigram-cloud" alt="" width="300" height="300">
-                <figcaption>
-                  Fig.4 - Bigram Word Cloud
-                </figcaption>
-              </figure> -->
+              <div id="bigram-cloud"></div>
             </div>
           </div>
         </div>
@@ -301,6 +284,7 @@
       <li>A prediction of which hosts are superhosts and what are the most important factors to determine that status</li>
       <li>More NLP analysis on other text fields, such as host description or listing description</li>
       <li>Analysis of Airbnb Plus, Luxe, and Experiences</li>
+      <li>A study on the relationship between housing prices and Airbnb listings, if any</li>
       <li>Using TF-IDF to better weight the frequencies of commonly occurring words</li>
       <li>Detection of fake reviews (since we can already generate them)</li>
       <li>SEO analysis of what listings make it to the top pages</li>
