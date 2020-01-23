@@ -32,6 +32,7 @@
   <div id="about"></div>
 
   <nav id="navbar" class="navbar sticky-top navbar-expand-lg navbar-custom banner">
+    <img src="static/images/logo.png" class="cloud-logo" height="50" width="50">
     <a href class="navbar-brand airy cloud" href="/">Up in the Air{bnb}</a>
   </nav>
 
@@ -42,9 +43,6 @@
       </li>
       <li>
         <a href="#datainsights" class="cloud">Data Insights</a>
-      </li>
-      <li>
-        <a href="#booking" class="cloud">Booking Map</a>
       </li>
       <li>
         <a href="#sentiment" class="cloud">Sentiment Map</a>
@@ -65,14 +63,15 @@
   <!-------------------------------------------------------------------------------------------------------->
   <div class="main">
     <!-- About Section -->
-    <br>
-    <h1 class="page-title">Up in the Air{bnb}</h1>
+    <h1 class="page-title"> 
+      <img src="static/images/logo.png" class="cloud-logo" height="175" width="200"> Up in the Air{bnb}
+    </h1>
     <h2>About</h2>
     <p>
-      Founded in 2008, Airbnb has been a blockbuster hit with the number of guests that have been served skyrocketing throughout the 2010s as an alternative to traditional hotels. As it prepares to go public this year, we wanted to specifically focus in on the Austin market for Airbnb rentals as local SMEs (Subject Matter Experts. Since we live here too!) to determine what the unique "characteristics" of Austin Airbnbs are. Here, we analyze and present an open dataset from <a href="http://insideairbnb.com/index.html" target="_blank"> Inside Airbnb </a> that includes a listing's cost per night, zip code, ratings, availability, and more. 
+      Founded in 2008, Airbnb has been a blockbuster hit with the number of guest bookings skyrocketing throughout the 2010s as an alternative to traditional hotels. As it prepares to go public this year, we wanted to specifically focus in on the Austin market for Airbnb rentals as local SMEs (Subject Matter Experts. Since we live here too!) to determine what the unique "characteristics" of Austin Airbnbs are. Here, we analyze and present an open dataset from <a href="http://insideairbnb.com/index.html" target="_blank"> Inside Airbnb </a> that includes a listing's cost per night, zip code, ratings, availability, and more. 
       <br>
       <br>
-      Using Python, Tableau, AWS, Databricks, the John Snow Labs Spark NLP library, and Javascript libraries, we aim to present what makes Austin Airbnbs weird.
+      Using Python, Tableau, AWS, Databricks, the John Snow Labs Spark NLP library, and Javascript libraries, we aim to present what makes Austin Airbnbs not only unique, but <i>weird</i>.
     </p>
 
     <figure >
@@ -90,7 +89,7 @@
 
   <div class="main">
     <h2>Data Insights</h2>
-    <h3>by Hayley</h3>
+    <h3>by Hazel & Hayley</h3>
     <p>
       These are basic charts and plots that we did to investigate certain details of the Austin Airbnb listings, such as property and room types by region, average fees, average number of guests, and minimum nights.
     </p>
@@ -99,17 +98,10 @@
     <br>
     <br>
     <div id="airbnbProperty"></div>
-  </div>
-  <!-------------------------------------------------------------------------------------------------------->
-  <!-------------------------------------------- Booking Map ----------------------------------------------->
-  <!-------------------------------------------------------------------------------------------------------->
-  <div class="divider" id="booking"></div>
-
-  <div class="main">
-    <h2>Booking Map</h2>
-    <h3>by Hazel</h3>
+    <br>
+    <br>
     <p>
-      These are maps made in Tableau to show the distribution of Airbnb listings' price level distributions across the Austin area. A helpful tooltip is provided to show metadata information about each listing and a reference link to the listing on the Airbnb site.
+      Below is a map made in Tableau to show the distribution of Airbnb listings' price level distributions across the Austin area. A helpful tooltip is provided to show metadata information about each listing and a reference link to the listing on the Airbnb site.
     </p>
     <br>
     <div id="bookingMap"></div>
@@ -123,10 +115,10 @@
     <h2>Sentiment Map</h2>
     <h3>by Chris</h3>
     <p>
-      The review data was loaded onto an AWS Postgres server and John Snow Lab's Spark NLP library was used to vectorize all of the reviews to assess each sentence's general sentiment ("<mark class="green">positive</mark>" or "<mark class="red">negative</mark>"). After each review was analyzed, the sentiments were aggregated in various ways to assess the review's "overall" sentiment. Each aggregation could produce wildly different results so they were compared to the overall star rating of each listing as a measure of accuracy.
+      The review data for the listings was loaded onto an AWS Postgres server and John Snow Lab's Spark NLP library was used to aggregate all of the reviews and assess each their general sentiment ("<mark class="green">positive</mark>" or "<mark class="red">negative</mark>") on a sentence by sentence level. After each review was analyzed, the sentiments were aggregated in various ways to assess the review's "overall" sentiment. Each aggregation could produce wildly different results so they were compared to the overall star rating of each listing as a measure of accuracy.
       <br>
       <br>
-      Note that Airbnb reviews are overwhelmingly positive (the average rating was about 4.8 stars in the dataset!) so each aggregation's results are as follows:
+      Note that Airbnb reviews are overwhelmingly positive (the average rating was about 4.8 stars in the dataset!) and each aggregation's results are as follows:
 
       <ul>
         <li>
@@ -137,12 +129,12 @@
         <li>
           Highest Confidence Sentiment (sentiment of highest confidence level sentence in review)
           <br>
-          81%
+          82%
         </li>
         <li>
           Longest Sentence Sentiment (sentiment of longest sentence in review)
           <br>
-          48%
+          47%
         </li>
         <li>
           Classified Sentiment (distance function based on comparing lengths of positive vs negative sentences determines sentiment)
@@ -151,8 +143,16 @@
         </li>
       </ul>
     </p>
+    <p>
+      As you can see, just taking the count of positive vs. negative sentences produced the worst result in terms of accuracy. Some tweaking can be done (it was found that there are weird interpretations of certain characters so text cleaning could be improved) but the John Snow Spark NLP library tends to unconfidently rate sentences as negative much of the time from what I could see. Taking the most confident sentence as rated by the library and then using that one to represent the overall review was the option with the best accuracy.
+    </p>
     <br>
+
     <div id="map"></div>
+    <figcaption>
+      Fig.2 - Sentiment Map of Austin Airbnbs
+    </figcaption>
+
   </div>
   <!-------------------------------------------------------------------------------------------------------->
   <!-------------------------------------------- Word Clouds ----------------------------------------------->
@@ -162,6 +162,14 @@
   <div class="main">
     <h2>Word Clouds</h2>
     <h3>by Chris</h3>
+
+    <p>
+      The text of the reviews were isolated and cleaned (with a lot of common words and stopwords like "a", "the", "and", etc. taken out). We were interested in seeing what words were most uniquely popular in reviews for each zipcode. During our first analysis, the word frequencies seemed very homogenous, with most reviews having the same few key words (like "clean" or "host" for example), which was not very helpful in determing what made each area unique. The text was cleaned, taking out these more common words, and we arrived at the final dashboard below. The word clouds and bar charts can be a useful indicator of what makes each zipcode a unique place to stay in.
+      <br>
+      <br>
+      The pipeline for the John Snow Spark NLP library was much like the one for the sentiment map, except that this time the pipeline was set up to tokenize sentences, remove stopwords, and determine both the unigram and bigrams that occurred in the text.
+    </p>
+
     <div>
       <script src="https://gist.github.com/c-l-nguyen/4c31e6ed367290b9d2c4682f7017e985.js"></script>
     </div>
@@ -170,78 +178,45 @@
     <div class="container">
       
       <div class="btn-group">
-        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" id="dropdownMenuButton">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" id="dropdownMenuButton" data-toggle-second="tooltip" data-placement="right" title="Select zipcode here to change plots">
           Zipcode <span class="caret"></span>
         </button>
-        <ul class="dropdown-menu scrollable-menu" role="menu">
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78701">78701</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78702">78702</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78703">78703</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78704">78704</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78705">78705</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78712">78712</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78717">78717</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78719">78719</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78721">78721</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78722">78722</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78723">78723</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78724">78724</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78725">78725</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78726">78726</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78727">78727</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78728">78728</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78729">78729</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78730">78730</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78731">78731</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78732">78732</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78733">78733</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78734">78734</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78735">78735</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78736">78736</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78737">78737</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78738">78738</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78739">78739</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78741">78741</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78742">78742</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78744">78744</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78745">78745</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78746">78746</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78747">78747</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78748">78748</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78749">78749</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78750">78750</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78751">78751</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78752">78752</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78753">78753</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78754">78754</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78756">78756</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78757">78757</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78758">78758</button></li>
-          <li><button class="dropdown-item" onclick="getZipcode(this.id)" type="button" id="78759">78759</button></li>
-        </ul>
+        <div id="zipcodeContainer"></div>
       </div>
 
       <div class="row">
 
         <!-- zipcode map column -->
         <div class="col-sm">
-          <div id="zipcode">
-            <img src="static/images/austin_zipcode_map.png" alt="" width="350" height="600">
+          <div id="zipcode" style= "width:100%; height:100%">
+            <!-- <img src="static/images/austin_zipcode_map.png" alt="" width="350" height="600"> -->
           </div>
         </div>
         <!-- word cloud column -->
         <div class="col-sm">
           <div class="col-sm">
             <div class="row">
-              <div id="unigram-div">
-                <img src="static/images/word_clouds/unigrams/unigram_78701.png" id="unigram-cloud" alt="unigram-cloud" width="300" height="300">
-              </div>
+              <!-- <div id="unigram-cloud"> -->
+                <!-- <img src="static/images/word_clouds/unigrams/unigram_78701.png" id="unigram-cloud" alt="unigram-cloud" width="300" height="300"> -->
+              <!-- </div> -->
+                <figure >
+                  <img src="static/images/word_clouds/unigrams/unigram_78701.png" id="unigram-cloud" alt="unigram-cloud" width="300" height="300">
+                  <figcaption>
+                    Fig.3 - Unigram Word Cloud
+                  </figcaption>
+                </figure>
             </div>
             <br>
             <div class="row">
-              <div id="bigram-div">
+              <!-- <div id="bigram-cloud"> -->
+                <!-- <img src="static/images/word_clouds/bigrams/bigram_78701.png" id="bigram-cloud" alt="" width="300" height="300"> -->
+              <!-- </div> -->
+              <figure >
                 <img src="static/images/word_clouds/bigrams/bigram_78701.png" id="bigram-cloud" alt="" width="300" height="300">
-              </div>
+                <figcaption>
+                  Fig.4 - Bigram Word Cloud
+                </figcaption>
+              </figure>
             </div>
           </div>
         </div>
@@ -249,11 +224,12 @@
         <div class="col-sm">
           <div class="col-sm">
             <div class="row">
-              <div id="unigram_plotly"></div>
+              <div id="unigram_plotly" style= "width:100%; height:100%"></div>
             </div>
             <br>
+            <br>
             <div class="row">
-              <div id="bigram_plotly"></div>
+              <div id="bigram_plotly" style= "width:100%; height:100%"></div>
             </div>
           </div>
         </div>
@@ -261,19 +237,6 @@
       </div>
     </div>
 
-    <br><br>
-    <p>
-      The text of the reviews was isolated and cleaned (with a lot of common words
-      like "a", "the", "and", etc. taken out). We were interested in seeing what
-      words were most popularly used in reviews in each zip code. During the first go-
-      around, the word frequencies seemed pretty homogenous, with most reviews having
-      the same few key words (like "clean" or "host" for example), which was not very
-      helpful. The data was reorganized, taking out these more common words, and we 
-      arrived at the final product.
-
-      The word clouds and chart can be a useful indicator of what makes each zip code 
-      a unique place to stay.
-    </p>
   </div>
   <!-------------------------------------------------------------------------------------------------------->
   <!------------------------------------------- Review Writer ---------------------------------------------->
@@ -330,10 +293,23 @@
   <div class="main">
 
     <h2>Future Analysis Directions</h2>
-
+    <br>
     <p>
-      There are many future directions that we can take our analysis.
+      There are many future directions that we can take our analysis (especially if we had more data!):
     </p>
+    <ul>
+      <li>A prediction of which hosts are superhosts and what are the most important factors to determine that status</li>
+      <li>More NLP analysis on other text fields, such as host description or listing description</li>
+      <li>Analysis of Airbnb Plus, Luxe, and Experiences</li>
+      <li>Using TF-IDF to better weight the frequencies of commonly occurring words</li>
+      <li>Detection of fake reviews (since we can already generate them)</li>
+      <li>SEO analysis of what listings make it to the top pages</li>
+      <li>Map of amenities (where am I most likely to find a hairdryer?)</li>
+      <li>Comparison of Airbnb vs hotel stays</li>
+      <li>Image classification of thumbnails (do they really have that pool they reported?)</li>
+      <li>Analysis of other cities' Airbnbs to compare to Austin</li>
+      <li>...the possibilities seem as endless as the amount of Airbnb listings!</li>
+    </ul>
 
   </div>
   <!-------------------------------------------------------------------------------------------------------->
@@ -375,6 +351,9 @@
   <script type="text/javascript" src="static/js/nlp.js"></script>
   <!-- Tableau JS -->
   <script type="text/javascript" src="static/js/tableau.js"></script>
+  <!-- Anychart JS -->
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
   <!-- Misc JS -->
   <script type="text/javascript" src="static/js/logic.js"></script>
 
