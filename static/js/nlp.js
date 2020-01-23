@@ -200,6 +200,9 @@ function buildWordCloud(wordData, id, zipcode){
 // change plots based on zipcode
 //////////////////////////////////////////////////////////////////////////
 async function getZipcode(zipcode_id){
+  // show user which zipcode is selected
+  document.getElementById("myZipcode").innerHTML = zipcode_id;
+
   // plotly bar plots
   const wordCloudDataUnigram = await d3.json("static/data/unigram.json").catch(error => console.warn(error));
   ngramPlotly(wordCloudDataUnigram, 'unigram_plotly', zipcode_id);
@@ -218,7 +221,9 @@ async function getZipcode(zipcode_id){
 // Load initial plots
 //////////////////////////////////////////////////////////////////////////
 (async function(){
+  // show user which zipcode is selected
   let init_zipcode = "78701";
+  document.getElementById("myZipcode").innerHTML = init_zipcode;
 
   // sentiment analysis leaftlet map
   const sentimentData = await d3.csv("static/data/nlp_sentiment_results.csv").catch(error => console.warn(error));
