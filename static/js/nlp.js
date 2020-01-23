@@ -133,14 +133,12 @@ function createMap(sentiment_data) {
 // create plotly bar charts for ngram results
 //////////////////////////////////////////////////////////////////////////
 function ngramPlotly(ngram_data, id, zipcode) {
+  // determine prefix from input id for text
   let prefix = "";
-  let fignum = 0;
   if (id == "unigram_plotly"){
     prefix = "uni";
-    fignum = 5;
   } else {
     prefix = "bi";
-    fignum = 6;
   }
 
   let data = [{
@@ -151,49 +149,27 @@ function ngramPlotly(ngram_data, id, zipcode) {
   }];
 
   let layout = {
-    // title: "Top 10 " + prefix + "grams",
     autosize: false,
     width: 300,
     height: 300,
     hovermode: 'closest',
-      margin : {
+    margin : {
         t:55,
         b:55
     },
     yaxis:{
       autorange:'reversed'
-    },
-    annotations: [{
-      xref: 'paper',
-      yref: 'paper',
-      x: -.2,
-      xanchor: 'left',
-      y: -0.1,
-      yanchor: 'top',
-      text: 'Fig.' + fignum + ' - Top 10 ' + prefix + 'grams',
-      showarrow: false,
-      font: {
-        color: "black",
-        size: 15,
-        family: 'Quicksand'
-      }
-    }]
+    }
   };
       
   Plotly.newPlot(id, data, layout, {displayModeBar: false});
 }
 //////////////////////////////////////////////////////////////////////////
-// create word clouds for ngram results
+// create anychart word clouds for ngram results
 //////////////////////////////////////////////////////////////////////////
 function buildWordCloud(wordData, id, zipcode){
 
-  let prefix = "";
-  if (id == "unigram-cloud"){
-    prefix = "Uni";
-  } else {
-    prefix = "Bi";
-  }
-
+  // wipe out HTML under div id for refresh
   document.getElementById(id).innerHTML = "";
 
   anychart.onDocumentReady(function() {
@@ -202,8 +178,6 @@ function buildWordCloud(wordData, id, zipcode){
     // create a tag (word) cloud chart
     let chart = anychart.tagCloud(wordCloudData);
 
-    // set a chart title
-    chart.title(prefix+ 'grams');
     // set an array of angles at which the words will be laid out
     chart.angles([0, 270]);
 
@@ -218,18 +192,14 @@ function buildWordCloud(wordData, id, zipcode){
 // change plots based on zipcode
 //////////////////////////////////////////////////////////////////////////
 async function getZipcode(zipcode_id){
+  // plotly bar plots
   const wordCloudDataUnigram = await d3.json("static/data/unigram.json").catch(error => console.warn(error));
   ngramPlotly(wordCloudDataUnigram, 'unigram_plotly', zipcode_id);
 
   const wordCloudDataBigram = await d3.json("static/data/bigram.json").catch(error => console.warn(error));
   ngramPlotly(wordCloudDataBigram, 'bigram_plotly', zipcode_id);
 
-  // let unigram_image_path = "static/images/word_clouds/unigrams/unigram_"+ zipcode_id + ".png";
-  // d3.select("#unigram-cloud").attr("src", unigram_image_path);
-
-  // let bigram_image_path = "static/images/word_clouds/bigrams/bigram_"+ zipcode_id + ".png";
-  // d3.select("#bigram-cloud").attr("src", bigram_image_path);
-
+  // anychart word clouds
   const wordCloudDataUnigram50 = await d3.json("static/data/unigram50.json").catch(error => console.warn(error));
   buildWordCloud(wordCloudDataUnigram50, 'unigram-cloud', zipcode_id);
 
@@ -242,15 +212,18 @@ async function getZipcode(zipcode_id){
 (async function(){
   let init_zipcode = "78701";
 
+  // sentiment analysis leaftlet map
   const sentimentData = await d3.csv("static/data/nlp_sentiment_results.csv").catch(error => console.warn(error));
   createMap(sentimentData);
 
+  // initial plotly bar plots
   const wordCloudDataUnigram10 = await d3.json("static/data/unigram.json").catch(error => console.warn(error));
   ngramPlotly(wordCloudDataUnigram10, 'unigram_plotly', init_zipcode);
 
   const wordCloudDataBigram10 = await d3.json("static/data/bigram.json").catch(error => console.warn(error));
   ngramPlotly(wordCloudDataBigram10, 'bigram_plotly', init_zipcode);
 
+  // initial anychart word clouds
   const wordCloudDataUnigram50 = await d3.json("static/data/unigram50.json").catch(error => console.warn(error));
   buildWordCloud(wordCloudDataUnigram50, 'unigram-cloud', init_zipcode);
 
