@@ -46,12 +46,14 @@ function createMap(sentiment_data) {
       color: getColor(d.vote_sentiment_positivity),
       fillColor: getColor(d.vote_sentiment_positivity),
       radius: 100
-      }).bindPopup("<h4>" + d.name + "</h4> <hr>" + 
+      }).bindPopup("<h5>" + d.name + "</h5> <hr>" + 
           "Review Scores Rating: " + d.review_scores_rating/20 + " stars <br>" + 
           "Host Name: " + d.host_name + "<br>" + 
           "Positivity Rating: " + "<font color=" + getColor(d.vote_sentiment_positivity) + ">" + positivityClass(d.vote_sentiment_positivity) + "</font>" + "<br>" + 
-          "Price per Night: $" + Math.round(d.price) + "<br>" + 
-          "Link: " + "<a href=\"" + d.listing_url + "\" target=\"_blank\">" + d.listing_url + "</a>")
+          "Price per Night: $" + Math.round(d.price) + "<br>" +
+          "Property Type: " + d.property_type + "<br>" +
+          "Link: " + "<a href=\"" + d.listing_url + "\" target=\"_blank\">" + d.listing_url + "</a>"
+          )
     );
 
     // high confidence sentiment markers
@@ -65,7 +67,9 @@ function createMap(sentiment_data) {
           "Host Name: " + d.host_name + "<br>" + 
           "Positivity Rating: " + "<font color=" + getColor(d.high_conf_sentiment_positivity) + ">" + positivityClass(d.high_conf_sentiment_positivity) + "</font>" + "<br>" + 
           "Price per Night: $" + Math.round(d.price) + "<br>" + 
-          "Link: " + "<a href=\"" + d.listing_url + "\" target=\"_blank\">" + d.listing_url + "</a>")
+          "Property Type: " + d.property_type + "<br>" +
+          "Link: " + "<a href=\"" + d.listing_url + "\" target=\"_blank\">" + d.listing_url + "</a>"
+          )
     );
 
     // longest confidence sentiment markers
@@ -79,7 +83,9 @@ function createMap(sentiment_data) {
           "Host Name: " + d.host_name + "<br>" + 
           "Positivity Rating: " + "<font color=" + getColor(d.long_conf_sentiment_positivity) + ">" + positivityClass(d.long_conf_sentiment_positivity) + "</font>" + "<br>" + 
           "Price per Night: $" + Math.round(d.price) + "<br>" + 
-          "Link: " + "<a href=\"" + d.listing_url + "\" target=\"_blank\">" + d.listing_url + "</a>")
+          "Property Type: " + d.property_type + "<br>" +
+          "Link: " + "<a href=\"" + d.listing_url + "\" target=\"_blank\">" + d.listing_url + "</a>"
+          )
     );
 
     // classify sentiment markers
@@ -93,7 +99,9 @@ function createMap(sentiment_data) {
           "Host Name: " + d.host_name + "<br>" + 
           "Positivity Rating: " + "<font color=" + getColor(d.classified_sentiment_positivity) + ">" + positivityClass(d.classified_sentiment_positivity) + "</font>" + "<br>" + 
           "Price per Night: $" + Math.round(d.price) + "<br>" + 
-          "Link: " + "<a href=\"" + d.listing_url + "\" target=\"_blank\">" + d.listing_url + "</a>")
+          "Property Type: " + d.property_type + "<br>" +
+          "Link: " + "<a href=\"" + d.listing_url + "\" target=\"_blank\">" + d.listing_url + "</a>"
+          )
     );
 
   })
