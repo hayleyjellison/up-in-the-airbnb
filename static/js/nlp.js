@@ -185,33 +185,35 @@ function ngramPlotly(ngram_data, id, zipcode) {
 //////////////////////////////////////////////////////////////////////////
 // create word clouds for ngram results
 //////////////////////////////////////////////////////////////////////////
-// function buildWordCloud(wordData, id, zipcode){
+function buildWordCloud(wordData, id, zipcode){
 
-//   let prefix = "";
-//   if (id == "unigram-cloud"){
-//     prefix = "Uni";
-//   } else {
-//     prefix = "Bi";
-//   }
+  let prefix = "";
+  if (id == "unigram-cloud"){
+    prefix = "Uni";
+  } else {
+    prefix = "Bi";
+  }
 
-//   anychart.onDocumentReady(function() {
-//     let wordCloudData = wordData[zipcode];
+  document.getElementById(id).innerHTML = "";
 
-//     // create a tag (word) cloud chart
-//     let chart = anychart.tagCloud(wordCloudData);
+  anychart.onDocumentReady(function() {
+    let wordCloudData = wordData[zipcode];
 
-//     // set a chart title
-//     chart.title(prefix+ 'grams');
-//     // set an array of angles at which the words will be laid out
-//     chart.angles([0, 270]);
+    // create a tag (word) cloud chart
+    let chart = anychart.tagCloud(wordCloudData);
 
-//     // display the word cloud chart
-//     chart.container(id);
-//     chart.draw();
+    // set a chart title
+    chart.title(prefix+ 'grams');
+    // set an array of angles at which the words will be laid out
+    chart.angles([0, 270]);
 
-//   })
+    // display the word cloud chart
+    chart.container(id);
+    chart.draw();
 
-// }
+  })
+
+}
 //////////////////////////////////////////////////////////////////////////
 // change plots based on zipcode
 //////////////////////////////////////////////////////////////////////////
@@ -222,17 +224,17 @@ async function getZipcode(zipcode_id){
   const wordCloudDataBigram = await d3.json("static/data/bigram.json").catch(error => console.warn(error));
   ngramPlotly(wordCloudDataBigram, 'bigram_plotly', zipcode_id);
 
-  let unigram_image_path = "static/images/word_clouds/unigrams/unigram_"+ zipcode_id + ".png";
-  d3.select("#unigram-cloud").attr("src", unigram_image_path);
+  // let unigram_image_path = "static/images/word_clouds/unigrams/unigram_"+ zipcode_id + ".png";
+  // d3.select("#unigram-cloud").attr("src", unigram_image_path);
 
-  let bigram_image_path = "static/images/word_clouds/bigrams/bigram_"+ zipcode_id + ".png";
-  d3.select("#bigram-cloud").attr("src", bigram_image_path);
+  // let bigram_image_path = "static/images/word_clouds/bigrams/bigram_"+ zipcode_id + ".png";
+  // d3.select("#bigram-cloud").attr("src", bigram_image_path);
 
-  // const wordCloudDataUnigram50 = await d3.json("static/data/unigram50.json").catch(error => console.warn(error));
-  // buildWordCloud(wordCloudDataUnigram50, 'unigram-cloud', zipcode_id);
+  const wordCloudDataUnigram50 = await d3.json("static/data/unigram50.json").catch(error => console.warn(error));
+  buildWordCloud(wordCloudDataUnigram50, 'unigram-cloud', zipcode_id);
 
-  // const wordCloudDataBigram50 = await d3.json("static/data/bigram50.json").catch(error => console.warn(error));
-  // buildWordCloud(wordCloudDataBigram50, 'bigram-cloud', zipcode_id);
+  const wordCloudDataBigram50 = await d3.json("static/data/bigram50.json").catch(error => console.warn(error));
+  buildWordCloud(wordCloudDataBigram50, 'bigram-cloud', zipcode_id);
 }
 //////////////////////////////////////////////////////////////////////////
 // Load initial plots
@@ -249,9 +251,9 @@ async function getZipcode(zipcode_id){
   const wordCloudDataBigram10 = await d3.json("static/data/bigram.json").catch(error => console.warn(error));
   ngramPlotly(wordCloudDataBigram10, 'bigram_plotly', init_zipcode);
 
-  // const wordCloudDataUnigram50 = await d3.json("static/data/unigram50.json").catch(error => console.warn(error));
-  // buildWordCloud(wordCloudDataUnigram50, 'unigram-cloud', init_zipcode);
+  const wordCloudDataUnigram50 = await d3.json("static/data/unigram50.json").catch(error => console.warn(error));
+  buildWordCloud(wordCloudDataUnigram50, 'unigram-cloud', init_zipcode);
 
-  // const wordCloudDataBigram50 = await d3.json("static/data/bigram50.json").catch(error => console.warn(error));
-  // buildWordCloud(wordCloudDataBigram50, 'bigram-cloud', init_zipcode);
+  const wordCloudDataBigram50 = await d3.json("static/data/bigram50.json").catch(error => console.warn(error));
+  buildWordCloud(wordCloudDataBigram50, 'bigram-cloud', init_zipcode);
 })()
