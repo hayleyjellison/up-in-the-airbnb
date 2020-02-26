@@ -1,36 +1,30 @@
 ![airbnb](static/images/newairbnb.jpeg)
 
 # Up in the Air{bnb}
-https://hayleyjellison.github.io/up-in-the-airbnb/
+Website: https://hayleyjellison.github.io/up-in-the-airbnb/
 
 ## Group Members
 
 * Chris Nguyen (Team Leader/Data Scientist): [@c-l-nguyen](https://github.com/c-l-nguyen)
 * Hayley Jellison (Git Master): [@hayleyjellison](https://github.com/hayleyjellison)
 * Hazel Despain (Product Manager): [@hazeldespain](https://github.com/hazeldespain)
-* Nathan Wong (Lead Web Developer): [@toestie](https://github.com/toestie)
+* Nathan Wong (Web Developer/Data Scientist): [@toestie](https://github.com/toestie)
 * Paul Vonder Haar (Data Engineer): [@paulvonderhaar](https://github.com/paulvonderhaar)
 
-We are taking data from Airbnb properties around Austin, Texas to analyze the new market of room/house rental and how it affects the existing housing and hotel industries. This data includes the listings's cost per night, zip code, rating, availability, and more. We will use machine learning to create a value guesser when given certain parameters about the Airbnb property, as well as go through rental reviews to find word association trends based on what area of the city the property is located in. The metrics we will use to evaluate our ml model will include the r2 value and classification point. We will clean this data by getting rid of filler words in reviews such as "the", "of", & "and". We plan on training our model with AWS and Databricks and we will demonstrate our model using a web app.
+In this project, we are taking data from Airbnb properties around Austin, Texas to analyze basic property information (such as room types and fees by region) using Tableau and to analyze the text contained within the review comments users submitted. We clean the text data by getting rid of filler words in reviews such as "the", "of", "and" using PySpark and the John Snow NLP library. The text is then analyzed using pretrained pipelines for sentiment analysis and the most common ngrams. Visualizations are then created to show a map of sentiment values for Airbnb listings and a dashboard showing the ngram analysis by zipcode. Finally, an RNN was trained using LSTM on the text to create AI generated reviews and we display all of this on our website.
 
-We will be using:
-* John Snow 
-* Decision Trees
-* SVM
-* Logistic Regression
-
-WHAT
-1. Review AI Generator
-2. Word cloud analysis
-3. Superhost classification
-4. Review score analysis
-
-WHY
-1. Airbnb is a new industry - affecting housing market and hotel business 
-2. Room rental is very popular right now- what unique qualities do Airbnb's in Austin have -> what can you do to make your listing more successful here??
+Tools we used:
+* John Snow Spark NLP Library
+* AWS
+* Tableau
+* Javascript libraries (Leaflet, Anychart)
+* HTML/CSS
+* Databricks
+* PySpark
+* Recurrent Neural Network (RNN)
 
 ## Data Sources
-* https://www.kaggle.com/dataset/fc7a2d436d47f21c86242da9adf324f18b36d12fefb8defd111fc53ecf8f9304
+* https://www.kaggle.com/clnguyen/austinairbnbs20191112
 * http://insideairbnb.com/index.html
 
 ## References
