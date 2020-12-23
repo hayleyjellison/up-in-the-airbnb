@@ -23,6 +23,14 @@ Tools we used:
 * PySpark
 * Recurrent Neural Network (RNN)
 
+## Sample Screenshots of Website
+What the website looks like:
+
+| | | |
+|:-------------------------:|:-------------------------:|:-------------------------:|
+|<img width="1604" alt="website-1" src="static/images/website-1.png">  |  <img width="1604" alt="website-2" src="static/images/website-2.png">  |  <img width="1604" alt="wesbite-3" src="static/images/website-3.png">  |
+|<img width="1604" alt="website-4" src="static/images/website-4.png">  |  <img width="1604" alt="website-5" src="static/images/website-5.png">  |  <img width="1604" alt="website-6" src="static/images/website-6.png">  |
+
 ## Data Sources
 * https://www.kaggle.com/clnguyen/austinairbnbs20191112
 * http://insideairbnb.com/index.html
